@@ -18,13 +18,16 @@ public class CharacterCreator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        List<Knight> knights = new List<Knight>();
+        List<KnightObject> knights = new List<KnightObject>();
         for (int i = 0; i < knightCount; i++)
         {
             GameObject go = Instantiate(knightPrefab, new Vector3(startingPos.x, startingPos.y + knightHeight * i+1, startingPos.z), Quaternion.identity);
             go.name = $"Knight_{i}";
+            KnightObject ko = go.GetComponent<KnightObject>();
             Knight knight = new Knight(go);
-            knights.Add(knight);
+            ko.knight = knight;
+
+            knights.Add(ko);
         }
         tower = new KnightTower(knights);
 

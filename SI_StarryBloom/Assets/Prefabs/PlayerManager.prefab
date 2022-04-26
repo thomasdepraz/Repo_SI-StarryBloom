@@ -69,8 +69,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2033199cf3e74dc4fb6876af6a6b00ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knightPrefab: {fileID: 2483951195825777265, guid: 896300f1c9ddab146acc3a8d66b05d49, type: 3}
-  knightCount: 3
+  knightPrefab: {fileID: 3724582733499958853, guid: 93726615c12a82b40ab8238146010423, type: 3}
+  knightCount: 5
   knightHeight: 1
   startingPos: {x: 0, y: 0, z: 0}
   tower:

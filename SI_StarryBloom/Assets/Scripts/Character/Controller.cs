@@ -60,9 +60,6 @@ public class Controller : MonoBehaviour
         characterForward.y = 0;
         characterForward.Normalize();
         rg = new Vector3(characterForward.z, 0, -characterForward.x);
-
-       
-
     }
 
     public void Move(InputAction.CallbackContext context)
