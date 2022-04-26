@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class CharacterCreator : MonoBehaviour
 
     public KnightTower tower;
 
+    public Action buildComplete;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,8 @@ public class CharacterCreator : MonoBehaviour
             knights.Add(knight);
         }
         tower = new KnightTower(knights);
+
+        buildComplete?.Invoke();
     }
 
     // Update is called once per frame

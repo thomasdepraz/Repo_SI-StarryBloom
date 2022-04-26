@@ -8,15 +8,23 @@ public class Player : MonoBehaviour
     public CharacterCreator creator;
     public Controller controller;
     public KnightTower tower;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        creator.buildComplete += InitPlayer;
     }
 
-    // Update is called once per frame
-    void Update()
+   
+
+    private void InitPlayer()
     {
-        
+        tower = creator.tower;
+        controller.rb = GetRootRigidbody();
+    }
+
+    private Rigidbody GetRootRigidbody()
+    {
+        return tower.root.rigidbody;
     }
 }
