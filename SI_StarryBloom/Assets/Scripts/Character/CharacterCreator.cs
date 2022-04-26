@@ -6,6 +6,8 @@ using UnityEngine;
 public class CharacterCreator : MonoBehaviour
 {
     [Header("Data")]
+    public Player myPlayer;
+
     public GameObject knightPrefab;
     public GameObject defaultWeaponPrefab;
     public int knightCount;
@@ -31,10 +33,17 @@ public class CharacterCreator : MonoBehaviour
             knights.Add(ko);
         }
         tower = new KnightTower(knights);
+        tower.myPlayer = myPlayer;
 
-        var weapon = Instantiate(defaultWeaponPrefab, startingPos, Quaternion.identity);
+        var weapon = WeaponCreation();
         tower.AttachWeapon(weapon);
 
         buildComplete?.Invoke();
+    }
+
+    public GameObject WeaponCreation()
+    {
+        var topKnight = tower.knights[tower.knights.Count - 1].knight;
+        return Instantiate(defaultWeaponPrefab, topKnight.transform.position + topKnight.transform.up * 1, Quaternion.identity);
     }
 }
