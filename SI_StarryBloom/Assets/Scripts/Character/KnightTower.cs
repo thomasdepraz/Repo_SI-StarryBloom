@@ -88,4 +88,22 @@ public class KnightTower
         }
     }
 
+    public void AddKnight(KnightObject newKnight, Player player)
+    {
+        var rootPosition = knights[0].transform.position;
+
+        //Add to list and set root
+        knights.Insert(0, newKnight);
+        SetRoot(newKnight.knight);
+
+        //Set controller
+        newKnight.transform.position = rootPosition + Vector3.down * 1;//FIX MAGIC NUMBER
+        newKnight.transform.forward = knights[1].knight.transform.forward;
+        player.controller.rb = newKnight.knight.rigidbody;
+
+        //Set joint
+        newKnight.knight.SetJoint(knights[1].knight);
+
+    }
+
 }

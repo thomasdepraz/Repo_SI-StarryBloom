@@ -44,17 +44,14 @@ public class Knight
     {
         rigidbody.mass = weight;
     }
-
     public void SetJoint(Knight otherKnight)
     {
         joint.connectedBody = otherKnight.rigidbody;
     }
-
     public void SetJoint(GameObject otherObject)
     {
         joint.connectedBody = otherObject.GetComponent<Rigidbody>();
     }
-
     public void DeleteJoint()
     {
         joint.connectedBody = null;
@@ -62,11 +59,25 @@ public class Knight
 
     public bool IsRoot()
     {
+        if (tower.knights.Count == 0)//Temp fix
+            return true;
+
         return this == tower.knights[0].knight;
     }
 
     public bool IsTopKnight()
     {
         return this == tower.knights[tower.knights.Count - 1].knight;
+    }
+
+    public void SetPlayer(Player player)
+    {
+        SetTower(player.tower);
+
+        //Change costume 
+
+
+
+
     }
 }
