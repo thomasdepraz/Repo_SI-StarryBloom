@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f213fea80cd38f4db42d951041fdedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
+  ID: Player_1
   creator: {fileID: 2522341802301047109}
   controller: {fileID: 2522341802301047112}
   tower:
