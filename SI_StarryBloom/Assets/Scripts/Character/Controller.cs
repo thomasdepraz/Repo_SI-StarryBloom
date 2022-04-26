@@ -22,6 +22,8 @@ public class Controller : MonoBehaviour
 
     //movement variables
     Vector3 characterForward;
+    Vector3 rg;
+    Vector3 direction;
 
 
     // Start is called before the first frame update
@@ -49,6 +51,7 @@ public class Controller : MonoBehaviour
         characterForward = camTransform.forward;
         characterForward.y = 0;
         characterForward.Normalize();
+        rg = new Vector3(characterForward.z, 0, -characterForward.x);
 
 
         OrientPlayer();
@@ -62,9 +65,8 @@ public class Controller : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        Vector3 rg = new Vector3()
         Vector2 stick = context.ReadValue<Vector2>();
-        Vector3 direction = 
+        direction = characterForward * stick.x + rg * stick.y; 
 
 
 
