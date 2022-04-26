@@ -194,6 +194,44 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "UIPlayer",
+            "id": "162d5499-e55b-4245-9a5a-d23e5622b818",
+            "actions": [
+                {
+                    "name": "SwapCharacter",
+                    "type": "Button",
+                    "id": "8211b069-b192-4eee-8798-a2fa3ac4f07b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9561dc81-85cb-4beb-82f2-0b76ae9c2d22",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwapCharacter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a0b700d-d466-43b1-b97b-7d78b667c57b",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SwapCharacter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
