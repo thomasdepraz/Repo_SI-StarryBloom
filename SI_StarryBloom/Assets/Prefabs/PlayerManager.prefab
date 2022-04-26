@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f213fea80cd38f4db42d951041fdedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 
+  ID: Player_1
   creator: {fileID: 2522341802301047109}
   controller: {fileID: 2522341802301047112}
   tower:
@@ -54,6 +54,38 @@ MonoBehaviour:
     root:
       healthState: 0
       possessionState: 0
+      tower:
+        knights: []
+        root:
+          healthState: 0
+          possessionState: 0
+          tower:
+            knights: []
+            root:
+              healthState: 0
+              possessionState: 0
+              tower:
+                knights: []
+                root:
+                  healthState: 0
+                  possessionState: 0
+                  tower:
+                    knights: []
+                    root:
+                      healthState: 0
+                      possessionState: 0
+                      rigidbody: {fileID: 0}
+                      joint: {fileID: 0}
+                      transform: {fileID: 0}
+                  rigidbody: {fileID: 0}
+                  joint: {fileID: 0}
+                  transform: {fileID: 0}
+              rigidbody: {fileID: 0}
+              joint: {fileID: 0}
+              transform: {fileID: 0}
+          rigidbody: {fileID: 0}
+          joint: {fileID: 0}
+          transform: {fileID: 0}
       rigidbody: {fileID: 0}
       joint: {fileID: 0}
       transform: {fileID: 0}
@@ -78,6 +110,38 @@ MonoBehaviour:
     root:
       healthState: 0
       possessionState: 0
+      tower:
+        knights: []
+        root:
+          healthState: 0
+          possessionState: 0
+          tower:
+            knights: []
+            root:
+              healthState: 0
+              possessionState: 0
+              tower:
+                knights: []
+                root:
+                  healthState: 0
+                  possessionState: 0
+                  tower:
+                    knights: []
+                    root:
+                      healthState: 0
+                      possessionState: 0
+                      rigidbody: {fileID: 0}
+                      joint: {fileID: 0}
+                      transform: {fileID: 0}
+                  rigidbody: {fileID: 0}
+                  joint: {fileID: 0}
+                  transform: {fileID: 0}
+              rigidbody: {fileID: 0}
+              joint: {fileID: 0}
+              transform: {fileID: 0}
+          rigidbody: {fileID: 0}
+          joint: {fileID: 0}
+          transform: {fileID: 0}
       rigidbody: {fileID: 0}
       joint: {fileID: 0}
       transform: {fileID: 0}
