@@ -100,7 +100,7 @@ public class Controller : MonoBehaviour
     {
         if(context.action.phase == InputActionPhase.Performed)
         {
-            controlledTower.ThrowWeapon();
+            controlledTower.ThrowWeapon(targetDirection);
         }
     }
 }

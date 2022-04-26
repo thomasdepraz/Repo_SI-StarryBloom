@@ -62,7 +62,7 @@ public class KnightTower
         topKnight.SetJoint(weapon);
     }
 
-    public void ThrowWeapon()
+    public void ThrowWeapon(Vector3 direction)
     {
         var topKnight = knights[knights.Count - 1].knight;
         var weaponRb = topKnight.joint.connectedBody;
@@ -70,8 +70,7 @@ public class KnightTower
         {
             GameObject.Destroy(topKnight.joint);
             weaponRb.velocity = Vector3.zero;
-            weaponRb.AddForce(Vector3.up * 25, ForceMode.Impulse);
-
+            weaponRb.AddForce(direction * 25, ForceMode.Impulse);
         }
     }
 
