@@ -5,5 +5,6 @@ public class ControllerData : ScriptableObject
 {
     public float speed;
     public float jumpForce;
+    public float rotationSpeed;
 
 }
