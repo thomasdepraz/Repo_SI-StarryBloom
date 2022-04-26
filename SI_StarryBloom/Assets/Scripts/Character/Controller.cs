@@ -52,6 +52,8 @@ public class Controller : MonoBehaviour
         characterForward.y = 0;
         characterForward.Normalize();
         rg = new Vector3(characterForward.z, 0, -characterForward.x);
+        Debug.DrawLine(self.position, self.position + characterForward * 5, Color.red);
+        Debug.DrawLine(self.position, self.position + rg * 5, Color.blue);
 
 
         OrientPlayer();
@@ -66,12 +68,10 @@ public class Controller : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         Vector2 stick = context.ReadValue<Vector2>();
-        direction = characterForward * stick.x + rg * stick.y; 
+        direction = characterForward * stick.y + rg * stick.x;
+        Debug.DrawLine(self.position, self.position + direction * 5, Color.green);
 
-
-
-
-        Vector3 velocity = new Vector3(stick.x, rb.velocity.y, stick.y);
+        Vector3 velocity = new Vector3(direction.x, rb.velocity.y, direction.z);
         rb.velocity =  velocity * speed;
     }
 
