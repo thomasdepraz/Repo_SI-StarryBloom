@@ -12,6 +12,7 @@ public class Controller : MonoBehaviour
     private Rigidbody rb;
     private float speed;
     private float jumpForce;
+    private float rotationSpeed;
 
     Gamepad gamepad = Gamepad.current;
 
@@ -37,6 +38,7 @@ public class Controller : MonoBehaviour
         //Set variable from scriptable
         speed = controllerData.speed;
         jumpForce = controllerData.jumpForce;
+        rotationSpeed = controllerData.rotationSpeed;
 
         self = transform;
         targetDirection = Vector3.forward;
@@ -54,14 +56,10 @@ public class Controller : MonoBehaviour
         rg = new Vector3(characterForward.z, 0, -characterForward.x);
         Debug.DrawLine(self.position, self.position + characterForward * 5, Color.red);
         Debug.DrawLine(self.position, self.position + rg * 5, Color.blue);
-
-
-        OrientPlayer();
     }
 
     private void OrientPlayer()
     {
-        
     }
 
 
@@ -69,7 +67,7 @@ public class Controller : MonoBehaviour
     {
         Vector2 stick = context.ReadValue<Vector2>();
         direction = characterForward * stick.y + rg * stick.x;
-        Debug.DrawLine(self.position, self.position + direction * 5, Color.green);
+        
 
         Vector3 velocity = new Vector3(direction.x, rb.velocity.y, direction.z);
         rb.velocity =  velocity * speed;
@@ -78,7 +76,8 @@ public class Controller : MonoBehaviour
     public void Rotate(InputAction.CallbackContext context)
     {
         Vector2 stick = context.ReadValue<Vector2>();
-        targetDirection = self.position + new Vector3(stick.x, 0, stick.y);
+        targetDirection = characterForward * stick.y + rg * stick.x;
+        self.forward = Vector3.Slerp(self.forward,targetDirection,Time.deltaTime * rotationSpeed);
     }
 
     public void Jump(InputAction.CallbackContext context)
