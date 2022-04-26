@@ -4,6 +4,8 @@ using UnityEngine;
 [System.Serializable]
 public class KnightTower
 {
+    public Player myPlayer;
+
     public List<KnightObject> knights = new List<KnightObject>();
     public Knight root;
 
@@ -51,8 +53,10 @@ public class KnightTower
         {
             //TEMP
             knights[i].gameObject.SetActive(false);
-
         }
+
+        var weapon = myPlayer.creator.WeaponCreation();
+        AttachWeapon(weapon);
     }
 
     public void AttachWeapon(GameObject weapon)
