@@ -55,6 +55,11 @@ public class Knight
         joint.connectedBody = otherObject.GetComponent<Rigidbody>();
     }
 
+    public void DeleteJoint()
+    {
+        joint.connectedBody = null;
+    }
+
     public bool IsRoot()
     {
         return this == tower.knights[0].knight;

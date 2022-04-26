@@ -9,7 +9,7 @@ public class KnightObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(!knight.IsRoot())
+        if (!knight.IsRoot() && collision.gameObject.tag == "Weapon" && knight.tower != null)
         {
             Debug.Log(collision.gameObject.name);
             var tower = knight.tower;
