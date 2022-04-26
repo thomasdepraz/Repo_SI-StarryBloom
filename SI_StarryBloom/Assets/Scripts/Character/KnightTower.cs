@@ -49,14 +49,24 @@ public class KnightTower
     {
         int index = knights.IndexOf(startKnight);
 
-        for (int i = knights.Count - 1; i >= index; i--)
+        int numberToEject = knights.Count - knights.IndexOf(startKnight);
+
+        for (int i = 0; i < numberToEject; i++)
         {
+            knights[knights.Count - 1].knight.DeleteJoint();
+
+            knights[knights.Count - 1].knight.rigidbody.AddForce(knights[knights.Count - 1].knight.transform.forward * 5f);
+
+            knights[knights.Count - 1].knight.tower = null;
+
+            knights.RemoveAt(knights.Count - 1);
+
             //TEMP
-            knights[i].gameObject.SetActive(false);
+            //knights[i].gameObject.SetActive(false);
         }
 
-        var weapon = myPlayer.creator.WeaponCreation();
-        AttachWeapon(weapon);
+        //var weapon = myPlayer.creator.WeaponCreation();
+        //AttachWeapon(weapon);
     }
 
     public void AttachWeapon(GameObject weapon)
