@@ -18,7 +18,7 @@ public class Knight
     public HealthState healthState;
     public PossessionState possessionState;
 
-    private KnightTower tower;
+    public KnightTower tower;
 
     public Rigidbody rigidbody;
     public ConfigurableJoint joint;
@@ -48,5 +48,10 @@ public class Knight
     public void SetJoint(Knight otherKnight)
     {
         joint.connectedBody = otherKnight.rigidbody;
+    }
+
+    public bool IsRoot()
+    {
+        return this == tower.knights[0].knight;
     }
 }

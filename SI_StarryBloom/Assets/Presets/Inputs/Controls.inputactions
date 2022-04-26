@@ -107,6 +107,17 @@
                 },
                 {
                     "name": "",
+                    "id": "7f0fdbeb-b162-48ce-903a-bd634b9cb328",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4643e709-3768-452e-8345-55ecc4b8592e",
                     "path": "<Gamepad>/buttonNorth",
                     "interactions": "",

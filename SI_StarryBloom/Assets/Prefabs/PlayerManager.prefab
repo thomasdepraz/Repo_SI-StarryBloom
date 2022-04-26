@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knightPrefab: {fileID: 3724582733499958853, guid: 93726615c12a82b40ab8238146010423, type: 3}
-  knightCount: 3
+  knightCount: 5
   knightHeight: 1
   startingPos: {x: 0, y: 0, z: 0}
   tower:
@@ -95,7 +95,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerData: {fileID: 11400000, guid: 199c9c57390393044992a4030d2afbc0, type: 2}
   playerHeight: 1
-  targetDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &2522341802301047111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +122,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2522341802301047112}
         m_TargetAssemblyTypeName: Controller, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
@@ -139,7 +138,7 @@ MonoBehaviour:
     m_ActionName: Player/Move
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2522341802301047112}
         m_TargetAssemblyTypeName: Controller, Assembly-CSharp
         m_MethodName: Rotate
         m_Mode: 0
@@ -155,7 +154,7 @@ MonoBehaviour:
     m_ActionName: Player/Rotate
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2522341802301047112}
         m_TargetAssemblyTypeName: Controller, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 0
@@ -171,7 +170,7 @@ MonoBehaviour:
     m_ActionName: Player/Jump
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2522341802301047112}
         m_TargetAssemblyTypeName: Controller, Assembly-CSharp
         m_MethodName: Throw
         m_Mode: 0
