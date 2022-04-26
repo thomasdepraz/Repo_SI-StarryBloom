@@ -50,8 +50,18 @@ public class Knight
         joint.connectedBody = otherKnight.rigidbody;
     }
 
+    public void SetJoint(GameObject otherObject)
+    {
+        joint.connectedBody = otherObject.GetComponent<Rigidbody>();
+    }
+
     public bool IsRoot()
     {
         return this == tower.knights[0].knight;
+    }
+
+    public bool IsTopKnight()
+    {
+        return this == tower.knights[tower.knights.Count - 1].knight;
     }
 }
