@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 public class Controller : MonoBehaviour
 {
     //[Header("References")]
+    public KnightTower controlledTower;
+
     private Rigidbody _rb;
     public Rigidbody rb 
     {
@@ -46,7 +48,6 @@ public class Controller : MonoBehaviour
         jumpForce = controllerData.jumpForce;
         rotationSpeed = controllerData.rotationSpeed;
 
-        self = transform;
         targetDirection = Vector3.forward;
 
         camTransform = Camera.main.transform;
@@ -98,6 +99,8 @@ public class Controller : MonoBehaviour
     public void Throw(InputAction.CallbackContext context)
     {
         if(context.action.phase == InputActionPhase.Performed)
-            Debug.Log("Throw");
+        {
+            controlledTower.ThrowWeapon();
+        }
     }
 }

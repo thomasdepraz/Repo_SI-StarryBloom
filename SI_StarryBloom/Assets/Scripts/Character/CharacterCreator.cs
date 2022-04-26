@@ -7,6 +7,7 @@ public class CharacterCreator : MonoBehaviour
 {
     [Header("Data")]
     public GameObject knightPrefab;
+    public GameObject defaultWeaponPrefab;
     public int knightCount;
     public int knightHeight;
     public Vector3 startingPos;
@@ -31,12 +32,9 @@ public class CharacterCreator : MonoBehaviour
         }
         tower = new KnightTower(knights);
 
-        buildComplete?.Invoke();
-    }
+        var weapon = Instantiate(defaultWeaponPrefab, startingPos, Quaternion.identity);
+        tower.AttachWeapon(weapon);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        buildComplete?.Invoke();
     }
 }

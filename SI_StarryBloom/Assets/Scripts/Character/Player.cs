@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     {
         tower = creator.tower;
         controller.rb = GetRootRigidbody();
+        controller.controlledTower = tower;
     }
 
     private Rigidbody GetRootRigidbody()

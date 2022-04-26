@@ -27,7 +27,7 @@ public class KnightTower
         //set base knight weight
         SetRoot(knights[0].knight);
 
-        GameObject.Destroy(knights[knights.Count-1].knight.joint);
+        //GameObject.Destroy(knights[knights.Count-1].knight.joint);
     }
 
     private void SetRoot(Knight newRoot)
@@ -51,6 +51,26 @@ public class KnightTower
         {
             //TEMP
             knights[i].gameObject.SetActive(false);
+
+        }
+    }
+
+    public void AttachWeapon(GameObject weapon)
+    {
+        var topKnight = knights[knights.Count - 1].knight;
+        weapon.transform.position = topKnight.transform.position + topKnight.transform.up * 1; //FIX MAGIC NUMBER
+        topKnight.SetJoint(weapon);
+    }
+
+    public void ThrowWeapon()
+    {
+        var topKnight = knights[knights.Count - 1].knight;
+        var weaponRb = topKnight.joint.connectedBody;
+        if(weaponRb!=null)
+        {
+            GameObject.Destroy(topKnight.joint);
+            weaponRb.velocity = Vector3.zero;
+            weaponRb.AddForce(Vector3.up * 25, ForceMode.Impulse);
 
         }
     }
