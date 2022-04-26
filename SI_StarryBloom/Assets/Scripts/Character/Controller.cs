@@ -82,6 +82,9 @@ public class Controller : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
+        if (rb == null)
+          return;
+
         if (context.action.phase == InputActionPhase.Performed)
         {
             if (isGrounded())
