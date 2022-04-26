@@ -9,31 +9,34 @@ public class ItemSpawn : MonoBehaviour
 
     public GameObject spawnTarget;
 
-    private bool spawnCooldownOn = false;
+    public float minThrowStrength;
+    public float maxThrowStrength;
 
     public void Start()
     {
-        Spawn();
+        Spawn(); //why tf does it not wait for the coroutine tho?
     }
 
-    public void Update()
+    // UPDATE ONLY USED FOR DEBUG, DELETE IN FINAL BUILD
+    /*public void Update()
     {
         if (Input.GetKeyDown ("down"))
         {
             Spawn();
         }
-    }
+    }*/
 
     private void Spawn()
     {
-        Instantiate(spawnItems[Random.Range(0, spawnItems.Count)], spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position, spawnPoints[Random.Range(0, spawnPoints.Count)].transform.rotation);
         StartCoroutine(SpawnTimer());
+        var clone = Instantiate(spawnItems[Random.Range(0, spawnItems.Count)], spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position, spawnPoints[Random.Range(0, spawnPoints.Count)].transform.rotation);
+        clone.GetComponent<Rigidbody>().AddForce((spawnTarget.transform.position - clone.transform.position) * Random.Range(minThrowStrength, maxThrowStrength));
+        //Debug.Log("YEET!");
     }
 
     private IEnumerator SpawnTimer()
     {
-        yield return new WaitForSeconds(Random.Range(3f, 10f));
-        Debug.Log("YEET!");
+        yield return new WaitForSeconds(Random.Range(2f, 8f));
         Spawn();
     }
 
