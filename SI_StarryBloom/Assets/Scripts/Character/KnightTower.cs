@@ -4,10 +4,10 @@ using UnityEngine;
 [System.Serializable]
 public class KnightTower
 {
-    public List<Knight> knights = new List<Knight>();
+    public List<KnightObject> knights = new List<KnightObject>();
     public Knight root;
 
-    public KnightTower(List<Knight> knights)
+    public KnightTower(List<KnightObject> knights)
     {
         this.knights = knights;
         InitializeKnights();
@@ -17,17 +17,17 @@ public class KnightTower
     {
         for (int i = 0; i < knights.Count; i++)
         {
-            knights[i].SetTower(this);
+            knights[i].knight.SetTower(this);
             if(i<knights.Count-1)
             {
-                knights[i].SetJoint(knights[i + 1]);
+                knights[i].knight.SetJoint(knights[i + 1].knight);
             }
         }
 
         //set base knight weight
-        SetRoot(knights[0]);
+        SetRoot(knights[0].knight);
 
-        GameObject.Destroy(knights[knights.Count-1].joint);
+        GameObject.Destroy(knights[knights.Count-1].knight.joint);
     }
 
     private void SetRoot(Knight newRoot)
@@ -42,4 +42,17 @@ public class KnightTower
         root.SetWeight(1000);
         root.rigidbody.constraints = UnityEngine.RigidbodyConstraints.FreezeRotation;
     }
+
+    public void EjectKnights(KnightObject startKnight)
+    {
+        int index = knights.IndexOf(startKnight);
+
+        for (int i = knights.Count - 1; i >= index; i--)
+        {
+            //TEMP
+            knights[i].gameObject.SetActive(false);
+
+        }
+    }
+
 }

@@ -5,38 +5,46 @@ using UnityEngine.InputSystem;
 
 public class Controller : MonoBehaviour
 {
+    //[Header("References")]
+    private Rigidbody _rb;
+    public Rigidbody rb 
+    {
+        get => _rb;
+
+        set 
+        {
+            _rb = value;
+            self = _rb.gameObject.transform;
+        } 
+    }
+
     [Header("Data")]
     public ControllerData controllerData;
 
+    //Data
     public float playerHeight;
-    private Rigidbody rb;
     private float speed;
     private float jumpForce;
+    private float rotationSpeed;
 
-    Gamepad gamepad = Gamepad.current;
-
-
-    public Vector3 targetDirection;
-    private Transform self;
-    private Transform camTransform;
 
     //movement variables
+    private Transform camTransform;
+    private Transform self;
     Vector3 characterForward;
     Vector3 rg;
     Vector3 direction;
+    Vector3 targetDirection;
+    float verticalSpeed;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if (gamepad == null)
-            return;
-
-        rb = GetComponent<Rigidbody>();
-
         //Set variable from scriptable
         speed = controllerData.speed;
         jumpForce = controllerData.jumpForce;
+        rotationSpeed = controllerData.rotationSpeed;
 
         self = transform;
         targetDirection = Vector3.forward;
@@ -52,33 +60,23 @@ public class Controller : MonoBehaviour
         characterForward.y = 0;
         characterForward.Normalize();
         rg = new Vector3(characterForward.z, 0, -characterForward.x);
-
-
-        OrientPlayer();
     }
-
-    private void OrientPlayer()
-    {
-        
-    }
-
 
     public void Move(InputAction.CallbackContext context)
     {
         Vector2 stick = context.ReadValue<Vector2>();
-        direction = characterForward * stick.x + rg * stick.y; 
+        direction = characterForward * stick.y + rg * stick.x;
+        
 
-
-
-
-        Vector3 velocity = new Vector3(stick.x, rb.velocity.y, stick.y);
-        rb.velocity =  velocity * speed;
+        Vector3 velocity = new Vector3(direction.x * speed, rb.velocity.y, direction.z * speed);
+        rb.velocity =  velocity;
     }
 
     public void Rotate(InputAction.CallbackContext context)
     {
         Vector2 stick = context.ReadValue<Vector2>();
-        targetDirection = self.position + new Vector3(stick.x, 0, stick.y);
+        targetDirection = characterForward * stick.y + rg * stick.x;
+        self.forward = Vector3.Slerp(self.forward,targetDirection,Time.deltaTime * rotationSpeed);
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -86,13 +84,16 @@ public class Controller : MonoBehaviour
         if (context.action.phase == InputActionPhase.Performed)
         {
             if (isGrounded())
+            {
+                Debug.Log("Jump");
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            }
         }
     }
 
     private bool isGrounded()
     {
-        return Physics.Raycast(self.position, -Vector3.up, playerHeight / 2 + 0.1f);
+        return Physics.Raycast(self.position + Vector3.up * 0.1f, -Vector3.up, 0.2f); ;
     }
     public void Throw(InputAction.CallbackContext context)
     {

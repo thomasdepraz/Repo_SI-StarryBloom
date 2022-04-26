@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64f363da2a253e4ba32257a43650846, type: 3}
   m_Name: Controller Base
   m_EditorClassIdentifier: 
-  speed: 1
-  jumpForce: 2000
+  speed: 5
+  jumpForce: 5000
+  rotationSpeed: 10
