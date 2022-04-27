@@ -5,6 +5,7 @@ using UnityEngine;
 public class KnightObject : MonoBehaviour
 {
     public Knight knight;
+    public bool invincible = false;
 
     public void Start()
     {
@@ -67,5 +68,13 @@ public class KnightObject : MonoBehaviour
 
     }
     
+    IEnumerator InvincibilityFrame()
+    {
+        invincible = true;
+
+        yield return new WaitForSeconds(1);
+
+        invincible = false;
+    }
 
 }
