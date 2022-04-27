@@ -37,7 +37,9 @@ public class Controller : MonoBehaviour
     Vector3 rg;
     Vector3 direction;
     Vector3 targetDirection;
+    Vector3 lastVelocity;
     float verticalSpeed;
+    private bool isMoving;
 
 
     // Start is called before the first frame update
@@ -61,16 +63,22 @@ public class Controller : MonoBehaviour
         characterForward.y = 0;
         characterForward.Normalize();
         rg = new Vector3(characterForward.z, 0, -characterForward.x);
+
+        rb.velocity = lastVelocity;
     }
 
     public void Move(InputAction.CallbackContext context)
     {
         Vector2 stick = context.ReadValue<Vector2>();
-        direction = characterForward * stick.y + rg * stick.x;
-        
-
-        Vector3 velocity = new Vector3(direction.x * speed, rb.velocity.y, direction.z * speed);
-        rb.velocity =  velocity;
+        if (context.action.phase == InputActionPhase.Started || context.action.phase == InputActionPhase.Performed)
+        {
+            direction = characterForward * stick.y + rg * stick.x;
+            lastVelocity = new Vector3(direction.x * speed, rb.velocity.y, direction.z * speed);
+        }
+        else if (context.action.phase == InputActionPhase.Canceled)
+        {
+            rb.velocity = Vector3.zero;        
+        }
     }
 
     public void Rotate(InputAction.CallbackContext context)
