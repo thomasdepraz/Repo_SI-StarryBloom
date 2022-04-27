@@ -102,8 +102,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Alpha: 1
     - FresnelPower: 4.03
+    - HitColor: 0
     - Smoothness: 0.2
+    - Transparency: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -132,6 +135,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - FresnelColor: {r: 0.6792453, g: 0.6612812, b: 0.61196154, a: 0}
+    - HitColor: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
