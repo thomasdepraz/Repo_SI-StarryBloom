@@ -56,11 +56,7 @@ public class KnightTower
 
         //knights[knights.Count - 1].knight.joint.connectedBody.AddForce((ejectDirection + (Vector3.up * Random.Range(-1f, 1f)) + (Vector3.right * Random.Range(-1f, 1f))) * 2f, ForceMode.Impulse);
 
-        knights[knights.Count - 1].knight.DeleteJoint();
-
-        ChangeWeaponTag("PickUpWeapon");
-
-        currentWeapon = null;
+        DetachWeapon();
 
         for (int i = 0; i < numberToEject; i++)
         {
@@ -79,6 +75,15 @@ public class KnightTower
         //AttachWeapon(weapon);
     }
 
+    public void DetachWeapon()
+    {
+        knights[knights.Count - 1].knight.DeleteJoint();
+
+        ChangeWeaponTag("PickUpWeapon");
+
+        currentWeapon = null;
+    }
+
     public void AttachWeapon(GameObject weapon)
     {
         var topKnight = knights[knights.Count - 1].knight;
@@ -94,9 +99,8 @@ public class KnightTower
         var weaponRb = topKnight.joint.connectedBody;
         if(weaponRb!=null)
         {
-            ChangeWeaponTag( "PickUpWeapon" );
+            DetachWeapon();
 
-            topKnight.DeleteJoint();
             weaponRb.velocity = Vector3.zero;
             weaponRb.AddForce(direction * 25, ForceMode.Impulse);
         }

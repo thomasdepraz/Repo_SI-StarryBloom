@@ -119,4 +119,13 @@ public class Controller : MonoBehaviour
             controlledTower.ThrowWeapon(targetDirection);
         }
     }
+
+    /*public void Pickup(InputAction.CallbackContext context)
+    {
+        if ( && context.action.phase == InputActionPhase.Performed)
+        {
+            Debug.Log("Pickup");
+            controlledTower.AttachWeapon(gameObject);
+        }
+    }*/
 }
