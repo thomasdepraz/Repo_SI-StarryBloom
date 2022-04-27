@@ -7,17 +7,17 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "a5058f81-91af-4085-b4bb-e04a434134bb",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 },
                 {
                     "name": "Rotate",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "0eb43485-d23e-4caa-8915-f45f8cef055e",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
                 },
@@ -42,7 +42,7 @@
                 {
                     "name": "2D Vector",
                     "id": "8a4c9881-b292-4a5d-8c05-3e7bd15ec8b4",
-                    "path": "2DVector(mode=1)",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -141,7 +141,7 @@
                 {
                     "name": "2D Vector",
                     "id": "6bec4ac0-cda4-4c1b-9ecc-1b7cba9abbc0",
-                    "path": "2DVector(mode=1)",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
