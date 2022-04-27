@@ -37,7 +37,7 @@ public class KnightObject : MonoBehaviour
 
         if(knight.possessionState == Knight.PossessionState.POSSESSED)
         {
-            if (knight.tower.knights.Count > 0 && !knight.IsRoot() && collision.gameObject.tag == "Weapon" )
+            if (knight.tower.knights.Count > 0 && !knight.IsRoot() && collision.gameObject.tag == "Weapon" && invincible == false)
             {
                 Debug.Log(collision.gameObject.name);
                 var tower = knight.tower;
@@ -60,6 +60,10 @@ public class KnightObject : MonoBehaviour
                 ejectForce = new Vector3(ejectForce.x, 0f, ejectForce.z);
 
                 tower.EjectKnights(this, ejectForce);
+
+                KnightObject rootKO = tower.root.transform.gameObject.GetComponent<KnightObject>();
+
+                rootKO.StartCoroutine(rootKO.InvincibilityFrame());
             }
         }
 
@@ -69,7 +73,21 @@ public class KnightObject : MonoBehaviour
     {
         invincible = true;
 
+        yield return new WaitForSeconds(0.05f);
+
+        /*for(int i =0; i < knight.tower.knights.Count; i++)
+        {
+            Color c = knight.tower.knights[i].rend.material.color;
+            c = new Color(c.r, c.g, c.b, 0);
+        }*/
+
         yield return new WaitForSeconds(1);
+
+        /*for (int i = 0; i < knight.tower.knights.Count; i++)
+        {
+            Color c = knight.tower.knights[i].rend.material.color;
+            c = new Color(c.r, c.g, c.b, 1);
+        }*/
 
         invincible = false;
     }
