@@ -58,19 +58,17 @@ public class KnightTower
 
         knights[knights.Count - 1].knight.DeleteJoint();
 
-        currentWeapon.tag = "PickUpWeapon";
+        ChangeWeaponTag("PickUpWeapon");
 
         currentWeapon = null;
 
         for (int i = 0; i < numberToEject; i++)
         {
-            //knights[knights.Count - 1].knight.possessionState = Knight.PossessionState.NEUTRAL;
-
             knights[knights.Count - 2].knight.DeleteJoint();
 
             knights[knights.Count - 1].knight.rigidbody.AddForce((ejectDirection + (Vector3.up * Random.Range(-1f,1f)) + (Vector3.right * Random.Range(-1f, 1f))) * 2f, ForceMode.Impulse);
 
-            knights[knights.Count - 1].knight.tower = null;
+            knights[knights.Count - 1].knight.SetPlayer(null);
 
             knights.RemoveAt(knights.Count - 1);
 
@@ -86,7 +84,7 @@ public class KnightTower
         var topKnight = knights[knights.Count - 1].knight;
         weapon.transform.position = topKnight.transform.position + topKnight.transform.up * 1; //FIX MAGIC NUMBER
         currentWeapon = weapon;
-        currentWeapon.tag = "Weapon";
+        ChangeWeaponTag("Weapon");
         topKnight.SetJoint(weapon);
     }
 
@@ -96,7 +94,7 @@ public class KnightTower
         var weaponRb = topKnight.joint.connectedBody;
         if(weaponRb!=null)
         {
-            currentWeapon.tag = "PickUpWeapon";
+            ChangeWeaponTag( "PickUpWeapon" );
 
             topKnight.DeleteJoint();
             weaponRb.velocity = Vector3.zero;
@@ -120,6 +118,20 @@ public class KnightTower
         //Set joint
         newKnight.knight.SetJoint(knights[1].knight);
 
+    }
+
+    public void ChangeWeaponTag(string newTag)
+    {
+        if (currentWeapon == null)
+            return;
+
+        currentWeapon.transform.tag = newTag;
+
+        int childNumber = currentWeapon.transform.childCount;
+        for(int i = 0; i< childNumber; i++)
+        {
+            currentWeapon.transform.GetChild(i).tag = newTag;
+        }
     }
 
 }

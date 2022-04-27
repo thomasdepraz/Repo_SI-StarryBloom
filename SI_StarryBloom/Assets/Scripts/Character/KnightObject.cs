@@ -16,8 +16,8 @@ public class KnightObject : MonoBehaviour
 
     public void Update()
     {
-        if(knight!= null)
-            Debug.Log(knight.tower.knights.Count);
+        //if(knight!= null)
+            //Debug.Log(knight.tower.knights.Count);
     }
 
     private void OnCollisionEnter(Collision collision)
