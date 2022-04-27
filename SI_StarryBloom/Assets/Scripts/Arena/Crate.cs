@@ -19,8 +19,4 @@ public class Crate : MonoBehaviour
         Instantiate(spawnItems[Random.Range(0, spawnItems.Count)], transform.position, transform.rotation);
         Destroy(gameObject);
     }
-
-
-
-
 }
