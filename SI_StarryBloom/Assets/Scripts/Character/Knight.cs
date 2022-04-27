@@ -54,7 +54,7 @@ public class Knight
     }
     public void DeleteJoint()
     {
-        joint.connectedBody = null;
+        joint.connectedBody = DummyRef.dR.rb;
     }
 
     public bool IsRoot()

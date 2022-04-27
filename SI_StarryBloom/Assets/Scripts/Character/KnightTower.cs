@@ -45,17 +45,21 @@ public class KnightTower
         root.rigidbody.constraints = UnityEngine.RigidbodyConstraints.FreezeRotation;
     }
 
-    public void EjectKnights(KnightObject startKnight)
+    public void EjectKnights(KnightObject startKnight, Vector3 ejectDirection)
     {
         int index = knights.IndexOf(startKnight);
 
         int numberToEject = knights.Count - knights.IndexOf(startKnight);
 
+        knights[knights.Count - 1].knight.DeleteJoint();
+
         for (int i = 0; i < numberToEject; i++)
         {
-            knights[knights.Count - 1].knight.DeleteJoint();
+            knights[knights.Count - 1].knight.possessionState = Knight.PossessionState.NEUTRAL;
 
-            knights[knights.Count - 1].knight.rigidbody.AddForce(knights[knights.Count - 1].knight.transform.forward * 5f);
+            knights[knights.Count - 2].knight.DeleteJoint();
+
+            knights[knights.Count - 1].knight.rigidbody.AddForce((ejectDirection + (Vector3.up * Random.Range(-0.5f,0.5f)) + (Vector3.right * Random.Range(-0.5f, 0.5f))) * 2f, ForceMode.Impulse);
 
             knights[knights.Count - 1].knight.tower = null;
 
