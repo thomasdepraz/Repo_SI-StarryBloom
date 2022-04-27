@@ -15,10 +15,10 @@ MonoBehaviour:
   sunSkin: {fileID: 2100000, guid: 947245fa832b2da478a3d0c13c32e261, type: 2}
   moonSkin: {fileID: 2100000, guid: 9772d99188c998a4eb95e76d4ce1f51b, type: 2}
   crossSkin: {fileID: 2100000, guid: d53f7ebb7729c0b4e8cff0a13f19c598, type: 2}
-  cloverSkin: {fileID: 2100000, guid: feee499d225c66c45971ea3ea7d0323b, type: 2}
-  neutralSkin: {fileID: 2100000, guid: 121d3ea69f33e124db254dde7463b524, type: 2}
+  cloverSkin: {fileID: 2100000, guid: 8e671898ac49ea4409a166b3edd13c6e, type: 2}
+  neutralSkin: {fileID: 2100000, guid: f42e7c6a8058ae54b80af662a693741b, type: 2}
   sunSkinNaked: {fileID: 2100000, guid: b4657e1f8229dac479f337f46a285062, type: 2}
   moonSkinNaked: {fileID: 2100000, guid: baa382650d4629641b93fab4e6dc5b28, type: 2}
   crossSkinNaked: {fileID: 2100000, guid: e8f7894b0c33dd24fb2c3fab95f56e1a, type: 2}
   cloverSkinNaked: {fileID: 2100000, guid: feee499d225c66c45971ea3ea7d0323b, type: 2}
-  neutralSkinNaked: {fileID: 2100000, guid: 121d3ea69f33e124db254dde7463b524, type: 2}
+  neutralSkinNaked: {fileID: 2100000, guid: 54525b84c0342934dae359b6ccc13afe, type: 2}
