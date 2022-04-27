@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class PlayerLobbySpawn : MonoBehaviour
 {
     public PlayerInputManager playerInputManager;
-    public Transform newParent;
     public GameObject startGameButton;
+    public GameObject infoMessage;
 
     public List<GameObject> players = new List<GameObject>();
 
@@ -27,7 +27,12 @@ public class PlayerLobbySpawn : MonoBehaviour
         players.Add(player.transform.gameObject);
 
         //Set active the correct model
-        //joinedPlayers[players.Count].SetActive(true);
+        joinedPlayers[players.Count-1].SetActive(true);
+
+        if(players.Count >= 1)
+        {
+            infoMessage.SetActive(false);
+        }
 
         if(players.Count > 1)
         {
@@ -38,8 +43,15 @@ public class PlayerLobbySpawn : MonoBehaviour
     public void Disconnect(PlayerInput player)
     {
         players.Remove(player.transform.gameObject);
-        
-        if(players.Count <= 1)
+
+        joinedPlayers[players.Count - 1].SetActive(false);
+
+        if (players.Count == 0)
+        {
+            infoMessage.SetActive(true);
+        }
+
+        if (players.Count <= 1)
         {
             startGameButton.SetActive(false);
         }
