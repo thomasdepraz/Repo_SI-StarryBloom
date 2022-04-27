@@ -5,6 +5,7 @@ using UnityEngine;
 public class KnightObject : MonoBehaviour
 {
     public Knight knight;
+    public SkinnedMeshRenderer rend;
 
     public void Start()
     {

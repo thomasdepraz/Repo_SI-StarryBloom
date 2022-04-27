@@ -4,14 +4,15 @@ using UnityEngine;
 [System.Serializable]
 public class KnightTower
 {
-    public Player myPlayer;
+    public Player player;
 
     public List<KnightObject> knights = new List<KnightObject>();
     public Knight root;
 
-    public KnightTower(List<KnightObject> knights)
+    public KnightTower(List<KnightObject> knights, Player player)
     {
         this.knights = knights;
+        this.player = player;
         InitializeKnights();
     }
 
@@ -19,7 +20,9 @@ public class KnightTower
     {
         for (int i = 0; i < knights.Count; i++)
         {
-            knights[i].knight.SetTower(this);
+            knights[i].knight.SetPlayer(player);
+
+
             if(i<knights.Count-1)
             {
                 knights[i].knight.SetJoint(knights[i + 1].knight);
@@ -28,8 +31,6 @@ public class KnightTower
 
         //set base knight weight
         SetRoot(knights[0].knight);
-
-        //GameObject.Destroy(knights[knights.Count-1].knight.joint);
     }
 
     private void SetRoot(Knight newRoot)
@@ -64,7 +65,6 @@ public class KnightTower
             //TEMP
             //knights[i].gameObject.SetActive(false);
         }
-
         //var weapon = myPlayer.creator.WeaponCreation();
         //AttachWeapon(weapon);
     }

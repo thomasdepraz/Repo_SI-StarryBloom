@@ -34,10 +34,18 @@ public class Knight
         possessionState = PossessionState.NEUTRAL;
     }
 
-    public void SetTower(KnightTower tower)
+    private void SetTower(Player player)
     {
-        possessionState = PossessionState.POSSESSED;
-        this.tower = tower;
+        if(player!=null)
+        {
+            possessionState = PossessionState.POSSESSED;
+            tower = player.tower;
+        }
+        else
+        {
+            possessionState = PossessionState.NEUTRAL;
+            tower = null;
+        }
     }
 
     public void SetWeight(int weight)
@@ -72,12 +80,10 @@ public class Knight
 
     public void SetPlayer(Player player)
     {
-        SetTower(player.tower);
+        SetTower(player);
 
         //Change costume 
-
-
-
-
+        var renderer = transform.gameObject.GetComponent<KnightObject>().rend;
+        renderer.material = PlayersManager.Instance.knightSkinsScheme.GetSkin(player != null ? player.ID : "", healthState == HealthState.NAKED);
     }
 }
