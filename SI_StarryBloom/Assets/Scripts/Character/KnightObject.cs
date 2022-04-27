@@ -61,7 +61,9 @@ public class KnightObject : MonoBehaviour
 
                 tower.EjectKnights(this, ejectForce);
 
-                StartCoroutine(InvincibilityFrame());
+                KnightObject rootKO = tower.root.transform.gameObject.GetComponent<KnightObject>();
+
+                rootKO.StartCoroutine(rootKO.InvincibilityFrame());
             }
         }
 
@@ -73,19 +75,19 @@ public class KnightObject : MonoBehaviour
 
         yield return new WaitForSeconds(0.05f);
 
-        for(int i =0; i < knight.tower.knights.Count; i++)
+        /*for(int i =0; i < knight.tower.knights.Count; i++)
         {
             Color c = knight.tower.knights[i].rend.material.color;
             c = new Color(c.r, c.g, c.b, 0);
-        }
+        }*/
 
         yield return new WaitForSeconds(1);
 
-        for (int i = 0; i < knight.tower.knights.Count; i++)
+        /*for (int i = 0; i < knight.tower.knights.Count; i++)
         {
             Color c = knight.tower.knights[i].rend.material.color;
             c = new Color(c.r, c.g, c.b, 1);
-        }
+        }*/
 
         invincible = false;
     }
