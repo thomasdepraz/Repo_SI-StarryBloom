@@ -6,6 +6,7 @@ public class KnightObject : MonoBehaviour
 {
     public Knight knight;
     public SkinnedMeshRenderer rend;
+    public bool invincible = false;
 
     public void Start()
     {
@@ -68,5 +69,13 @@ public class KnightObject : MonoBehaviour
 
     }
     
+    IEnumerator InvincibilityFrame()
+    {
+        invincible = true;
+
+        yield return new WaitForSeconds(1);
+
+        invincible = false;
+    }
 
 }

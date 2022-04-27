@@ -8,6 +8,7 @@ public class KnightTower
 
     public List<KnightObject> knights = new List<KnightObject>();
     public Knight root;
+    public GameObject currentWeapon;
 
     public KnightTower(List<KnightObject> knights, Player player)
     {
@@ -77,6 +78,8 @@ public class KnightTower
     {
         var topKnight = knights[knights.Count - 1].knight;
         weapon.transform.position = topKnight.transform.position + topKnight.transform.up * 1; //FIX MAGIC NUMBER
+        currentWeapon = weapon;
+        currentWeapon.tag = "Weapon";
         topKnight.SetJoint(weapon);
     }
 
@@ -86,6 +89,8 @@ public class KnightTower
         var weaponRb = topKnight.joint.connectedBody;
         if(weaponRb!=null)
         {
+            currentWeapon.tag = "PickUpWeapon";
+
             GameObject.Destroy(topKnight.joint);
             weaponRb.velocity = Vector3.zero;
             weaponRb.AddForce(direction * 25, ForceMode.Impulse);
