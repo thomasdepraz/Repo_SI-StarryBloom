@@ -24,6 +24,9 @@ public class Knight
     public ConfigurableJoint joint;
     public Transform transform;
 
+    public GameObject dummyPrefab;
+    public Rigidbody currentDummy;
+
     public Knight(GameObject knightObject)
     {
         rigidbody = knightObject.GetComponent<Rigidbody>();
@@ -54,15 +57,22 @@ public class Knight
     }
     public void SetJoint(Knight otherKnight)
     {
+        if (currentDummy != null)
+            GameObject.Destroy(currentDummy);
+
         joint.connectedBody = otherKnight.rigidbody;
     }
     public void SetJoint(GameObject otherObject)
     {
+        if (currentDummy != null)
+            GameObject.Destroy(currentDummy);
+
         joint.connectedBody = otherObject.GetComponent<Rigidbody>();
     }
     public void DeleteJoint()
     {
-        joint.connectedBody = DummyRef.dR.rb;
+        currentDummy = GameObject.Instantiate(dummyPrefab, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+        joint.connectedBody = currentDummy;
     }
 
     public bool IsRoot()
