@@ -6,6 +6,7 @@ using UnityEngine;
 public class CharacterCreator : MonoBehaviour
 {
     public GameObject knightPrefab;
+    public GameObject dummyPrefab;
     public GameObject defaultWeaponPrefab;
     public int knightCount;
     public int knightHeight;
@@ -25,6 +26,7 @@ public class CharacterCreator : MonoBehaviour
             KnightObject ko = go.GetComponent<KnightObject>();
             Knight knight = new Knight(go);
             ko.knight = knight;
+            ko.knight.dummyPrefab = dummyPrefab;
 
             knights.Add(ko);
         }

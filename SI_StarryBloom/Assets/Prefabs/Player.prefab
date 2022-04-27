@@ -83,22 +83,32 @@ MonoBehaviour:
                       rigidbody: {fileID: 0}
                       joint: {fileID: 0}
                       transform: {fileID: 0}
+                      dummyPrefab: {fileID: 0}
+                      currentDummy: {fileID: 0}
                     currentWeapon: {fileID: 0}
                   rigidbody: {fileID: 0}
                   joint: {fileID: 0}
                   transform: {fileID: 0}
+                  dummyPrefab: {fileID: 0}
+                  currentDummy: {fileID: 0}
                 currentWeapon: {fileID: 0}
               rigidbody: {fileID: 0}
               joint: {fileID: 0}
               transform: {fileID: 0}
+              dummyPrefab: {fileID: 0}
+              currentDummy: {fileID: 0}
             currentWeapon: {fileID: 0}
           rigidbody: {fileID: 0}
           joint: {fileID: 0}
           transform: {fileID: 0}
+          dummyPrefab: {fileID: 0}
+          currentDummy: {fileID: 0}
         currentWeapon: {fileID: 0}
       rigidbody: {fileID: 0}
       joint: {fileID: 0}
       transform: {fileID: 0}
+      dummyPrefab: {fileID: 0}
+      currentDummy: {fileID: 0}
     currentWeapon: {fileID: 0}
 --- !u!114 &2522341802301047109
 MonoBehaviour:
@@ -113,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knightPrefab: {fileID: 1246785603137168368, guid: 5921cf85f55d0b04296c635f00d9867b, type: 3}
+  dummyPrefab: {fileID: 3304502570862021746, guid: 10ddfbd13d1e6774ca10f8207fbff2bd, type: 3}
   defaultWeaponPrefab: {fileID: 8080562028992447010, guid: fb33a241d64965f4abc2303cf27bde04, type: 3}
   knightCount: 5
   knightHeight: 1
@@ -150,22 +161,32 @@ MonoBehaviour:
                       rigidbody: {fileID: 0}
                       joint: {fileID: 0}
                       transform: {fileID: 0}
+                      dummyPrefab: {fileID: 0}
+                      currentDummy: {fileID: 0}
                     currentWeapon: {fileID: 0}
                   rigidbody: {fileID: 0}
                   joint: {fileID: 0}
                   transform: {fileID: 0}
+                  dummyPrefab: {fileID: 0}
+                  currentDummy: {fileID: 0}
                 currentWeapon: {fileID: 0}
               rigidbody: {fileID: 0}
               joint: {fileID: 0}
               transform: {fileID: 0}
+              dummyPrefab: {fileID: 0}
+              currentDummy: {fileID: 0}
             currentWeapon: {fileID: 0}
           rigidbody: {fileID: 0}
           joint: {fileID: 0}
           transform: {fileID: 0}
+          dummyPrefab: {fileID: 0}
+          currentDummy: {fileID: 0}
         currentWeapon: {fileID: 0}
       rigidbody: {fileID: 0}
       joint: {fileID: 0}
       transform: {fileID: 0}
+      dummyPrefab: {fileID: 0}
+      currentDummy: {fileID: 0}
     currentWeapon: {fileID: 0}
 --- !u!114 &2522341802301047112
 MonoBehaviour:
@@ -212,22 +233,32 @@ MonoBehaviour:
                       rigidbody: {fileID: 0}
                       joint: {fileID: 0}
                       transform: {fileID: 0}
+                      dummyPrefab: {fileID: 0}
+                      currentDummy: {fileID: 0}
                     currentWeapon: {fileID: 0}
                   rigidbody: {fileID: 0}
                   joint: {fileID: 0}
                   transform: {fileID: 0}
+                  dummyPrefab: {fileID: 0}
+                  currentDummy: {fileID: 0}
                 currentWeapon: {fileID: 0}
               rigidbody: {fileID: 0}
               joint: {fileID: 0}
               transform: {fileID: 0}
+              dummyPrefab: {fileID: 0}
+              currentDummy: {fileID: 0}
             currentWeapon: {fileID: 0}
           rigidbody: {fileID: 0}
           joint: {fileID: 0}
           transform: {fileID: 0}
+          dummyPrefab: {fileID: 0}
+          currentDummy: {fileID: 0}
         currentWeapon: {fileID: 0}
       rigidbody: {fileID: 0}
       joint: {fileID: 0}
       transform: {fileID: 0}
+      dummyPrefab: {fileID: 0}
+      currentDummy: {fileID: 0}
     currentWeapon: {fileID: 0}
   controllerData: {fileID: 11400000, guid: 199c9c57390393044992a4030d2afbc0, type: 2}
   playerHeight: 1

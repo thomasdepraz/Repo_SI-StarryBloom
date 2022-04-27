@@ -71,25 +71,47 @@ public class KnightObject : MonoBehaviour
     
     IEnumerator InvincibilityFrame()
     {
-        invincible = true;
 
-        yield return new WaitForSeconds(0.05f);
-
-        /*for(int i =0; i < knight.tower.knights.Count; i++)
+        for (int i = 0; i < knight.tower.knights.Count; i++)
         {
-            Color c = knight.tower.knights[i].rend.material.color;
-            c = new Color(c.r, c.g, c.b, 0);
-        }*/
+            knight.tower.knights[i].invincible = true;
+        }
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.02f);
 
-        /*for (int i = 0; i < knight.tower.knights.Count; i++)
+        for (int x = 0; x <3; x ++)
         {
-            Color c = knight.tower.knights[i].rend.material.color;
-            c = new Color(c.r, c.g, c.b, 1);
-        }*/
+            for (int i = 0; i < knight.tower.knights.Count; i++)
+            {
+                knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0.5f);
+            }
 
-        invincible = false;
+            yield return new WaitForSeconds(0.2f);
+
+            for (int i = 0; i < knight.tower.knights.Count; i++)
+            {
+                knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0f);
+            }
+
+            yield return new WaitForSeconds(0.2f);
+        }
+
+        for (int i = 0; i < knight.tower.knights.Count; i++)
+        {
+            knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0.5f);
+        }
+
+        yield return new WaitForSeconds(0.2f);
+
+        for (int i = 0; i < knight.tower.knights.Count; i++)
+        {
+            knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0f);
+        }
+
+        for (int i = 0; i < knight.tower.knights.Count; i++)
+        {
+            knight.tower.knights[i].invincible = false;
+        }
     }
 
 }
