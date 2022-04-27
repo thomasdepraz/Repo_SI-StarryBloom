@@ -53,15 +53,21 @@ public class KnightTower
 
         int numberToEject = knights.Count - knights.IndexOf(startKnight);
 
+        //knights[knights.Count - 1].knight.joint.connectedBody.AddForce((ejectDirection + (Vector3.up * Random.Range(-1f, 1f)) + (Vector3.right * Random.Range(-1f, 1f))) * 2f, ForceMode.Impulse);
+
         knights[knights.Count - 1].knight.DeleteJoint();
+
+        currentWeapon.tag = "PickUpWeapon";
+
+        currentWeapon = null;
 
         for (int i = 0; i < numberToEject; i++)
         {
-            knights[knights.Count - 1].knight.possessionState = Knight.PossessionState.NEUTRAL;
+            //knights[knights.Count - 1].knight.possessionState = Knight.PossessionState.NEUTRAL;
 
             knights[knights.Count - 2].knight.DeleteJoint();
 
-            knights[knights.Count - 1].knight.rigidbody.AddForce((ejectDirection + (Vector3.up * Random.Range(-0.5f,0.5f)) + (Vector3.right * Random.Range(-0.5f, 0.5f))) * 2f, ForceMode.Impulse);
+            knights[knights.Count - 1].knight.rigidbody.AddForce((ejectDirection + (Vector3.up * Random.Range(-1f,1f)) + (Vector3.right * Random.Range(-1f, 1f))) * 2f, ForceMode.Impulse);
 
             knights[knights.Count - 1].knight.tower = null;
 
@@ -91,7 +97,7 @@ public class KnightTower
         {
             currentWeapon.tag = "PickUpWeapon";
 
-            GameObject.Destroy(topKnight.joint);
+            topKnight.DeleteJoint();
             weaponRb.velocity = Vector3.zero;
             weaponRb.AddForce(direction * 25, ForceMode.Impulse);
         }
