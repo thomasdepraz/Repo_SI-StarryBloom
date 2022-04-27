@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
         controller.rb = GetRootRigidbody();
         controller.controlledTower = tower;
         controller.enabled = true;
+        input.SwitchCurrentActionMap("Player");
     }
 
     private Rigidbody GetRootRigidbody()

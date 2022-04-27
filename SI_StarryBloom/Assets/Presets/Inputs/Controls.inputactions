@@ -325,6 +325,12 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Empty",
+            "id": "ceab765b-8b67-41a1-b06c-805013e612ca",
+            "actions": [],
+            "bindings": []
         }
     ],
     "controlSchemes": []
