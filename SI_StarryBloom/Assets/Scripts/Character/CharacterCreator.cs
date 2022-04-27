@@ -29,7 +29,6 @@ public class CharacterCreator : MonoBehaviour
             knights.Add(ko);
         }
         tower = new KnightTower(knights, player);
-        tower.player = player;
 
         var weapon = WeaponCreation();
         tower.AttachWeapon(weapon);

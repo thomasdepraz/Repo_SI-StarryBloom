@@ -7,6 +7,7 @@ public class GameManager : Singleton<GameManager>
 
     [Header("References")]
     public PlayersManager playersManager;
+    public GameTimer timer;
 
     [Header("Data")]
     public float gameLength;
@@ -19,6 +20,9 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         //Get PlayersManager
+        playersManager = PlayersManager.Instance;
+
+        StartGame();
 
     }
 
@@ -34,8 +38,10 @@ public class GameManager : Singleton<GameManager>
         playersManager.SpawnPlayers();
 
         //Appear UI
+        timer.timerUI.SetActive(true);
 
         //Start Timer
+        timer.RebootTimer();
 
         //
     }

@@ -11,13 +11,9 @@ public class GameTimer : MonoBehaviour
     [field: SerializeField] public float TimeLeft { get; private set; }
 
     public UnityEvent onTimerEnd;
+    public GameObject timerUI;
 
-    private void Start()
-    {
-        RebootTimer();
-    }
-
-    private void RebootTimer()
+    public void RebootTimer()
     {
         //Coroutine
         if (clockSpendTime != null) StopCoroutine(clockSpendTime);
@@ -36,4 +32,6 @@ public class GameTimer : MonoBehaviour
         TimeLeft = 0.0f;
         onTimerEnd?.Invoke();
     }
+
+
 }

@@ -83,18 +83,23 @@ MonoBehaviour:
                       rigidbody: {fileID: 0}
                       joint: {fileID: 0}
                       transform: {fileID: 0}
+                    currentWeapon: {fileID: 0}
                   rigidbody: {fileID: 0}
                   joint: {fileID: 0}
                   transform: {fileID: 0}
+                currentWeapon: {fileID: 0}
               rigidbody: {fileID: 0}
               joint: {fileID: 0}
               transform: {fileID: 0}
+            currentWeapon: {fileID: 0}
           rigidbody: {fileID: 0}
           joint: {fileID: 0}
           transform: {fileID: 0}
+        currentWeapon: {fileID: 0}
       rigidbody: {fileID: 0}
       joint: {fileID: 0}
       transform: {fileID: 0}
+    currentWeapon: {fileID: 0}
 --- !u!114 &2522341802301047109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,18 +150,23 @@ MonoBehaviour:
                       rigidbody: {fileID: 0}
                       joint: {fileID: 0}
                       transform: {fileID: 0}
+                    currentWeapon: {fileID: 0}
                   rigidbody: {fileID: 0}
                   joint: {fileID: 0}
                   transform: {fileID: 0}
+                currentWeapon: {fileID: 0}
               rigidbody: {fileID: 0}
               joint: {fileID: 0}
               transform: {fileID: 0}
+            currentWeapon: {fileID: 0}
           rigidbody: {fileID: 0}
           joint: {fileID: 0}
           transform: {fileID: 0}
+        currentWeapon: {fileID: 0}
       rigidbody: {fileID: 0}
       joint: {fileID: 0}
       transform: {fileID: 0}
+    currentWeapon: {fileID: 0}
 --- !u!114 &2522341802301047112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,18 +212,23 @@ MonoBehaviour:
                       rigidbody: {fileID: 0}
                       joint: {fileID: 0}
                       transform: {fileID: 0}
+                    currentWeapon: {fileID: 0}
                   rigidbody: {fileID: 0}
                   joint: {fileID: 0}
                   transform: {fileID: 0}
+                currentWeapon: {fileID: 0}
               rigidbody: {fileID: 0}
               joint: {fileID: 0}
               transform: {fileID: 0}
+            currentWeapon: {fileID: 0}
           rigidbody: {fileID: 0}
           joint: {fileID: 0}
           transform: {fileID: 0}
+        currentWeapon: {fileID: 0}
       rigidbody: {fileID: 0}
       joint: {fileID: 0}
       transform: {fileID: 0}
+    currentWeapon: {fileID: 0}
   controllerData: {fileID: 11400000, guid: 199c9c57390393044992a4030d2afbc0, type: 2}
   playerHeight: 1
 --- !u!114 &2522341802301047111

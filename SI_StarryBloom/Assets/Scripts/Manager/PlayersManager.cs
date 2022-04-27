@@ -34,16 +34,23 @@ public class PlayersManager : Singleton<PlayersManager>
 
         //set player ID
         player.ID = $"Player_{players.Count}";
+        player.input = playerInput;
 
         if(SceneManager.GetActiveScene().name == "LobbyMenu")
         {
             //set playerInput mode
-            if (players.Count == 1) player.input.SwitchCurrentActionMap("UIPlayer");
-            else player.input.SwitchCurrentActionMap("Empty");
+            if (players.Count == 1)
+            {
+                player.input.SwitchCurrentActionMap("UIPlayer");
+            }
+            else
+            {
+                player.input.SwitchCurrentActionMap("Empty");
+            }
         }
         else//Debug scene
         {
-            player.input.SwitchCurrentActionMap("Controller");
+            player.input.SwitchCurrentActionMap("Player");
         }
 
     }

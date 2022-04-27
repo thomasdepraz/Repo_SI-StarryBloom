@@ -14,6 +14,7 @@ public class KnightTower
     {
         this.knights = knights;
         this.player = player;
+        player.tower = this;
         InitializeKnights();
     }
 
@@ -57,7 +58,7 @@ public class KnightTower
 
         for (int i = 0; i < numberToEject; i++)
         {
-            knights[knights.Count - 1].knight.possessionState = Knight.PossessionState.NEUTRAL;
+            //knights[knights.Count - 1].knight.possessionState = Knight.PossessionState.NEUTRAL;
 
             knights[knights.Count - 2].knight.DeleteJoint();
 

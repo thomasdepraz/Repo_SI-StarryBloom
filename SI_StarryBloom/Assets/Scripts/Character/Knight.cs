@@ -18,7 +18,7 @@ public class Knight
     public HealthState healthState;
     public PossessionState possessionState;
 
-    public KnightTower tower;
+    [HideInInspector] public KnightTower tower;
 
     public Rigidbody rigidbody;
     public ConfigurableJoint joint;
