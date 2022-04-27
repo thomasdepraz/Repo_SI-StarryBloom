@@ -24,7 +24,7 @@ public class CharacterCreator : MonoBehaviour
         List<KnightObject> knights = new List<KnightObject>();
         for (int i = 0; i < knightCount; i++)
         {
-            GameObject go = Instantiate(knightPrefab, new Vector3(startingPos.x, startingPos.y + knightHeight * i+1, startingPos.z), Quaternion.identity);
+            GameObject go = Instantiate(knightPrefab, new Vector3(startingPos.x, startingPos.y + knightHeight * i+1, startingPos.z), Quaternion.identity, transform);
             go.name = $"Knight_{i}";
             KnightObject ko = go.GetComponent<KnightObject>();
             Knight knight = new Knight(go);

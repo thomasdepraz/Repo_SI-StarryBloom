@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 8954694940884078322}
   m_Layer: 0
   m_Name: KnightPrefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -677,6 +677,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c268361753a634b87590c964b1010e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knight:
+    healthState: 0
+    possessionState: 0
+    tower:
+      myPlayer: {fileID: 0}
+      knights: []
+      root:
+        healthState: 0
+        possessionState: 0
+        tower:
+          myPlayer: {fileID: 0}
+          knights: []
+          root:
+            healthState: 0
+            possessionState: 0
+            tower:
+              myPlayer: {fileID: 0}
+              knights: []
+              root:
+                healthState: 0
+                possessionState: 0
+                tower:
+                  myPlayer: {fileID: 0}
+                  knights: []
+                  root:
+                    healthState: 0
+                    possessionState: 0
+                    tower:
+                      myPlayer: {fileID: 0}
+                      knights: []
+                      root:
+                        healthState: 0
+                        possessionState: 0
+                    rigidbody: {fileID: 0}
+                    joint: {fileID: 0}
+                    transform: {fileID: 0}
+                rigidbody: {fileID: 0}
+                joint: {fileID: 0}
+                transform: {fileID: 0}
+            rigidbody: {fileID: 0}
+            joint: {fileID: 0}
+            transform: {fileID: 0}
+        rigidbody: {fileID: 0}
+        joint: {fileID: 0}
+        transform: {fileID: 0}
+    rigidbody: {fileID: 0}
+    joint: {fileID: 0}
+    transform: {fileID: 0}
 --- !u!1 &4508698569763305962
 GameObject:
   m_ObjectHideFlags: 0

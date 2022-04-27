@@ -99,6 +99,11 @@ public class Controller : MonoBehaviour
     {
         return Physics.Raycast(self.position + Vector3.up * 0.1f, -Vector3.up, 0.2f); ;
     }
+
+    public bool IsFalling()
+    {
+        return !isGrounded() && rb.velocity.y < 0;
+    }
     public void Throw(InputAction.CallbackContext context)
     {
         if(context.action.phase == InputActionPhase.Performed)

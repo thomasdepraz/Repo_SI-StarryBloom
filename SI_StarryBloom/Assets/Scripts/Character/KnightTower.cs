@@ -45,17 +45,21 @@ public class KnightTower
         root.rigidbody.constraints = UnityEngine.RigidbodyConstraints.FreezeRotation;
     }
 
-    public void EjectKnights(KnightObject startKnight)
+    public void EjectKnights(KnightObject startKnight, Vector3 ejectDirection)
     {
         int index = knights.IndexOf(startKnight);
 
         int numberToEject = knights.Count - knights.IndexOf(startKnight);
 
+        knights[knights.Count - 1].knight.DeleteJoint();
+
         for (int i = 0; i < numberToEject; i++)
         {
-            knights[knights.Count - 1].knight.DeleteJoint();
+            knights[knights.Count - 1].knight.possessionState = Knight.PossessionState.NEUTRAL;
 
-            knights[knights.Count - 1].knight.rigidbody.AddForce(knights[knights.Count - 1].knight.transform.forward * 5f);
+            knights[knights.Count - 2].knight.DeleteJoint();
+
+            knights[knights.Count - 1].knight.rigidbody.AddForce((ejectDirection + (Vector3.up * Random.Range(-0.5f,0.5f)) + (Vector3.right * Random.Range(-0.5f, 0.5f))) * 2f, ForceMode.Impulse);
 
             knights[knights.Count - 1].knight.tower = null;
 
@@ -86,6 +90,24 @@ public class KnightTower
             weaponRb.velocity = Vector3.zero;
             weaponRb.AddForce(direction * 25, ForceMode.Impulse);
         }
+    }
+
+    public void AddKnight(KnightObject newKnight, Player player)
+    {
+        var rootPosition = knights[0].transform.position;
+
+        //Add to list and set root
+        knights.Insert(0, newKnight);
+        SetRoot(newKnight.knight);
+
+        //Set controller
+        newKnight.transform.position = rootPosition + Vector3.down * 1;//FIX MAGIC NUMBER
+        newKnight.transform.forward = knights[1].knight.transform.forward;
+        player.controller.rb = newKnight.knight.rigidbody;
+
+        //Set joint
+        newKnight.knight.SetJoint(knights[1].knight);
+
     }
 
 }
