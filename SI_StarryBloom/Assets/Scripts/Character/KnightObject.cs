@@ -14,12 +14,6 @@ public class KnightObject : MonoBehaviour
             knight = new Knight(gameObject);
     }
 
-    public void Update()
-    {
-        if(knight!= null)
-            Debug.Log(knight.tower.knights.Count);
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if(knight.possessionState == Knight.PossessionState.NEUTRAL && collision.gameObject.tag == "Player")

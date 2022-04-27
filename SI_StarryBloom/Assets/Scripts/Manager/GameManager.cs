@@ -60,6 +60,14 @@ public class GameManager : Singleton<GameManager>
             }
         }
 
+        //Check draw
+        foreach(var p in players)
+        {
+            if (p != winner && p.tower.knights.Count == winner.tower.knights.Count)
+                winner = null;
+        }
+
+
         //Destroy towers
 
         //Reload arena (clean, stop throwers...)
@@ -70,6 +78,8 @@ public class GameManager : Singleton<GameManager>
         {
             players[i].input.SwitchCurrentActionMap("Empty");
         }
+
+
 
     }
 
