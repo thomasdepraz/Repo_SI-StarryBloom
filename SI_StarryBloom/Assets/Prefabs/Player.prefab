@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2522341802301047112}
   - component: {fileID: 2522341802301047111}
   m_Layer: 0
-  m_Name: PlayerManager
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,35 +46,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f213fea80cd38f4db42d951041fdedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: Player_1
+  ID: None
+  input: {fileID: 2522341802301047111}
   creator: {fileID: 2522341802301047109}
   controller: {fileID: 2522341802301047112}
   tower:
-    myPlayer: {fileID: 2522341802301047113}
+    player: {fileID: 0}
     knights: []
     root:
       healthState: 0
       possessionState: 0
       tower:
-        myPlayer: {fileID: 0}
+        player: {fileID: 0}
         knights: []
         root:
           healthState: 0
           possessionState: 0
           tower:
-            myPlayer: {fileID: 0}
+            player: {fileID: 0}
             knights: []
             root:
               healthState: 0
               possessionState: 0
               tower:
-                myPlayer: {fileID: 0}
+                player: {fileID: 0}
                 knights: []
                 root:
                   healthState: 0
                   possessionState: 0
                   tower:
-                    myPlayer: {fileID: 0}
+                    player: {fileID: 0}
                     knights: []
                     root:
                       healthState: 0
@@ -106,38 +107,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2033199cf3e74dc4fb6876af6a6b00ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPlayer: {fileID: 2522341802301047113}
-  knightPrefab: {fileID: 3724582733499958853, guid: 93726615c12a82b40ab8238146010423, type: 3}
+  knightPrefab: {fileID: 1246785603137168368, guid: 5921cf85f55d0b04296c635f00d9867b, type: 3}
   defaultWeaponPrefab: {fileID: 8080562028992447010, guid: fb33a241d64965f4abc2303cf27bde04, type: 3}
   knightCount: 5
   knightHeight: 1
   startingPos: {x: 0, y: 0, z: 0}
   tower:
-    myPlayer: {fileID: 0}
+    player: {fileID: 0}
     knights: []
     root:
       healthState: 0
       possessionState: 0
       tower:
-        myPlayer: {fileID: 0}
+        player: {fileID: 0}
         knights: []
         root:
           healthState: 0
           possessionState: 0
           tower:
-            myPlayer: {fileID: 0}
+            player: {fileID: 0}
             knights: []
             root:
               healthState: 0
               possessionState: 0
               tower:
-                myPlayer: {fileID: 0}
+                player: {fileID: 0}
                 knights: []
                 root:
                   healthState: 0
                   possessionState: 0
                   tower:
-                    myPlayer: {fileID: 0}
+                    player: {fileID: 0}
                     knights: []
                     root:
                       healthState: 0
@@ -170,31 +170,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlledTower:
-    myPlayer: {fileID: 0}
+    player: {fileID: 0}
     knights: []
     root:
       healthState: 0
       possessionState: 0
       tower:
-        myPlayer: {fileID: 0}
+        player: {fileID: 0}
         knights: []
         root:
           healthState: 0
           possessionState: 0
           tower:
-            myPlayer: {fileID: 0}
+            player: {fileID: 0}
             knights: []
             root:
               healthState: 0
               possessionState: 0
               tower:
-                myPlayer: {fileID: 0}
+                player: {fileID: 0}
                 knights: []
                 root:
                   healthState: 0
                   possessionState: 0
                   tower:
-                    myPlayer: {fileID: 0}
+                    player: {fileID: 0}
                     knights: []
                     root:
                       healthState: 0
@@ -305,6 +305,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 42bf4b9d-0958-4f7c-9e72-20ac24c80240
     m_ActionName: Player/Throw[/XInputControllerWindows/buttonNorth,/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8211b069-b192-4eee-8798-a2fa3ac4f07b
+    m_ActionName: UIPlayer/SwapCharacter[/XInputControllerWindows/rightTrigger,/XInputControllerWindows/leftTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

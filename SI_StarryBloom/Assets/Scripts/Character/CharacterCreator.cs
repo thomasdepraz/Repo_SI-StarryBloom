@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class CharacterCreator : MonoBehaviour
 {
-    [Header("Data")]
-    public Player myPlayer;
-
     public GameObject knightPrefab;
     public GameObject defaultWeaponPrefab;
     public int knightCount;
@@ -18,13 +15,12 @@ public class CharacterCreator : MonoBehaviour
 
     public Action buildComplete;
 
-    // Start is called before the first frame update
-    void Start()
+    public void BuildTower(Vector3 originPosition, Player player)
     {
         List<KnightObject> knights = new List<KnightObject>();
         for (int i = 0; i < knightCount; i++)
         {
-            GameObject go = Instantiate(knightPrefab, new Vector3(startingPos.x, startingPos.y + knightHeight * i+1, startingPos.z), Quaternion.identity, transform);
+            GameObject go = Instantiate(knightPrefab, new Vector3(originPosition.x, originPosition.y + knightHeight * i + 1, originPosition.z), Quaternion.identity, transform);
             go.name = $"Knight_{i}";
             KnightObject ko = go.GetComponent<KnightObject>();
             Knight knight = new Knight(go);
@@ -32,8 +28,8 @@ public class CharacterCreator : MonoBehaviour
 
             knights.Add(ko);
         }
-        tower = new KnightTower(knights);
-        tower.myPlayer = myPlayer;
+        tower = new KnightTower(knights, player);
+        tower.player = player;
 
         var weapon = WeaponCreation();
         tower.AttachWeapon(weapon);
