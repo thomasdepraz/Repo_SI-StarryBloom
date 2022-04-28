@@ -50,4 +50,14 @@ public class Player : MonoBehaviour
 
         tower = null;
     }
+
+    public IEnumerator RotateRigibody(Rigidbody rb, WeaponController wc)
+    {
+        yield return new WaitForSeconds(0.05f);
+
+        //rb.angularVelocity = new Vector3(0f, Mathf.Deg2Rad * 360f, 0f) * 10f;
+        rb.AddTorque(rb.transform.up * 20f, ForceMode.VelocityChange);
+
+        wc.StartThrowState();
+    }
 }

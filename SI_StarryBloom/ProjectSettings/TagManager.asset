@@ -7,7 +7,7 @@ TagManager:
   - Weapon
   - PickUpWeapon
   - Knight
-  - Floor
+  - Ground
   layers:
   - Default
   - TransparentFX

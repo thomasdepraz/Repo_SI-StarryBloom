@@ -8,7 +8,7 @@ public class KnightTower
 
     public List<KnightObject> knights = new List<KnightObject>();
     public Knight root;
-    public GameObject currentWeapon;
+    public WeaponController currentWeapon;
 
     public KnightTower(List<KnightObject> knights, Player player)
     {
@@ -60,6 +60,8 @@ public class KnightTower
 
         //knights[knights.Count - 1].knight.joint.connectedBody.AddForce((ejectDirection + (Vector3.up * Random.Range(-1f, 1f)) + (Vector3.right * Random.Range(-1f, 1f))) * 2f, ForceMode.Impulse);
 
+        ChangeWeaponTag("PickUpWeapon");
+
         DetachWeapon();
 
         for (int i = 0; i < numberToEject; i++)
@@ -69,6 +71,15 @@ public class KnightTower
             knights[knights.Count - 1].knight.rigidbody.AddForce((ejectDirection + (Vector3.up * Random.Range(-1f,1f)) + (Vector3.right * Random.Range(-1f, 1f))) * 2f, ForceMode.Impulse);
 
             knights[knights.Count - 1].knight.SetPlayer(null);
+
+            if(knights[knights.Count - 1].knight.healthState == Knight.HealthState.ARMORED)
+            {
+                knights[knights.Count - 1].knight.healthState = Knight.HealthState.NAKED;
+            }
+            else
+            {
+                knights[knights.Count - 1].StartCoroutine( knights[knights.Count - 1].Destruction());
+            }
 
             knights[knights.Count - 1].SetAnimState(KnightObject.AnimState.PANIC);
 
@@ -85,31 +96,34 @@ public class KnightTower
     {
         knights[knights.Count - 1].knight.DeleteJoint();
 
-        ChangeWeaponTag("PickUpWeapon");
+        //ChangeWeaponTag("PickUpWeapon");
 
         currentWeapon = null;
     }
 
-    public void AttachWeapon(GameObject weapon)
+    public void AttachWeapon(WeaponController weapon)
     {
         var topKnight = knights[knights.Count - 1].knight;
         weapon.transform.position = topKnight.transform.position + topKnight.transform.up * 1; //FIX MAGIC NUMBER
         weapon.transform.rotation = topKnight.transform.rotation;
         currentWeapon = weapon;
         ChangeWeaponTag("Weapon");
-        topKnight.SetJoint(weapon);
+        topKnight.SetJoint(weapon.gameObject);
     }
 
     public void ThrowWeapon(Vector3 direction)
     {
         var topKnight = knights[knights.Count - 1].knight;
         var weaponRb = topKnight.joint.connectedBody;
+        var cWeapon = currentWeapon;
         if(weaponRb!=null)
         {
+            player.StartCoroutine(player.RotateRigibody(weaponRb, currentWeapon));
+
             DetachWeapon();
 
             weaponRb.velocity = Vector3.zero;
-            weaponRb.AddForce(direction * 25, ForceMode.Impulse);
+            weaponRb.AddForce(cWeapon.transform.forward * 2f, ForceMode.Impulse);
         }
     }
 
