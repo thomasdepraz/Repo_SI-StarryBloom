@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_WindowPlane_01
-  m_Shader: {fileID: -6465566751694194690, guid: 1e2f42376ee472e4eb5492feded1705e, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: b94d39821643258488589f431b9b15c6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -33,11 +33,23 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - AO:
-        m_Texture: {fileID: 2800000, guid: 797c1bc73e320a04b946fd65705c3abd, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1019ec79574c16449b0d5a0e606c41e0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - BC:
+        m_Texture: {fileID: 2800000, guid: 32a179cd11bd48b4f94e131cd7a51f88, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Bonhomme:
+        m_Texture: {fileID: 2800000, guid: 7670ef3979d49424caf977c3fca95c44, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - MainTex:
         m_Texture: {fileID: 2800000, guid: 89aebdbb02be07c4eb5ea17411c1b767, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - N:
+        m_Texture: {fileID: 2800000, guid: a927af8acb384bb40863bf36f4650fad, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Normal:
@@ -103,6 +115,7 @@ Material:
     m_Ints: []
     m_Floats:
     - FresnelPower: 1
+    - JumpSpeed: 10
     - Smoothness: 0
     - _AlphaClip: 0
     - _Blend: 0
