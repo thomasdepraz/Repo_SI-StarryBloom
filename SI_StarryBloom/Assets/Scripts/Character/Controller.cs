@@ -64,19 +64,29 @@ public class Controller : MonoBehaviour
         characterForward.Normalize();
         rg = new Vector3(characterForward.z, 0, -characterForward.x);
 
-        rb.velocity = lastVelocity;
+        if (isMoving)
+            rb.velocity = lastVelocity;
+        else
+            rb.velocity = Vector3.zero;
     }
 
     public void Move(InputAction.CallbackContext context)
     {
+        Debug.Log(context.action.phase);
         Vector2 stick = context.ReadValue<Vector2>();
+
+        if (context.action.phase == InputActionPhase.Started)
+            isMoving = true;
+
         if (context.action.phase == InputActionPhase.Started || context.action.phase == InputActionPhase.Performed)
         {
             direction = characterForward * stick.y + rg * stick.x;
             lastVelocity = new Vector3(direction.x * speed, rb.velocity.y, direction.z * speed);
         }
-        else if (context.action.phase == InputActionPhase.Canceled)
+
+        if (context.action.phase == InputActionPhase.Canceled)
         {
+            isMoving = false;
             rb.velocity = Vector3.zero;        
         }
     }
@@ -116,16 +126,16 @@ public class Controller : MonoBehaviour
     {
         if(context.action.phase == InputActionPhase.Performed)
         {
-            controlledTower.ThrowWeapon(targetDirection);
+            controlledTower.ThrowWeapon(self.forward);
         }
     }
 
-    /*public void Pickup(InputAction.CallbackContext context)
+    public void Pickup(InputAction.CallbackContext context)
     {
-        if ( && context.action.phase == InputActionPhase.Performed)
+        if (context.action.phase == InputActionPhase.Performed)
         {
             Debug.Log("Pickup");
             controlledTower.AttachWeapon(gameObject);
         }
-    }*/
+    }
 }
