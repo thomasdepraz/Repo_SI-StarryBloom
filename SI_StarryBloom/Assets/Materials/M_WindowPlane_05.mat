@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_WindowPlane_01
+  m_Name: M_WindowPlane_05
   m_Shader: {fileID: -6465566751694194690, guid: b94d39821643258488589f431b9b15c6, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Bonhomme:
-        m_Texture: {fileID: 2800000, guid: 7670ef3979d49424caf977c3fca95c44, type: 3}
+        m_Texture: {fileID: 2800000, guid: d2ce5faf40ed8f2458e8b2d1ecda1cad, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - MainTex:
