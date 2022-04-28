@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 5078970468250625888}
   m_Layer: 0
   m_Name: KnightPrefabFinal
-  m_TagString: Untagged
+  m_TagString: Knight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -824,6 +824,7 @@ MonoBehaviour:
     transform: {fileID: 0}
     dummyPrefab: {fileID: 3304502570862021746, guid: 10ddfbd13d1e6774ca10f8207fbff2bd, type: 3}
     currentDummy: {fileID: 0}
+  col: {fileID: 0}
   rend: {fileID: 7990405836244860261}
   rend2: {fileID: 7990405836244860261}
   invincible: 0
