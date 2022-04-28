@@ -125,7 +125,6 @@ public class KnightTower
 
         //Set joint
         newKnight.knight.SetJoint(knights[1].knight);
-
     }
 
     public void ChangeWeaponTag(string newTag)
