@@ -77,6 +77,8 @@ public class KnightTower
         }
         //var weapon = myPlayer.creator.WeaponCreation();
         //AttachWeapon(weapon);
+
+        GameManager.Instance.UpdatePlayer(player);
     }
 
     public void DetachWeapon()
@@ -128,6 +130,7 @@ public class KnightTower
         //Set joint
         newKnight.knight.SetJoint(knights[1].knight);
 
+        GameManager.Instance.UpdatePlayer(player);
     }
 
     public void ChangeWeaponTag(string newTag)
