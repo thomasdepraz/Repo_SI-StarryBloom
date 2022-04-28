@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
+    List<Player> playersInRange = new List<Player>();
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Knight")
@@ -18,8 +20,7 @@ public class PickUp : MonoBehaviour
                     Player p = ko.transform.parent.GetComponent<Player>();
 
                     p.controller.pickupInRange = this;
-
-                    Debug.Log("CanBePickedUp");
+                    playersInRange.Add(p); ;
                 }
             }
         }
@@ -30,8 +31,25 @@ public class PickUp : MonoBehaviour
         if (other.gameObject.tag == "Knight")
         {
             KnightObject ko = other.transform.GetComponent<KnightObject>();
-            Player p = ko.transform.parent.GetComponent<Player>();
+
+            if (ko.knight.possessionState == Knight.PossessionState.POSSESSED)
+            {
+                if (ko.knight.IsRoot() == true)
+                {
+                    Player p = ko.transform.parent.GetComponent<Player>();
+                    p.controller.pickupInRange = null;
+                    playersInRange.Remove(p);
+                }
+            }
+        }
+    }
+
+    public void Grab()
+    {
+        foreach(var p in playersInRange)
+        {
             p.controller.pickupInRange = null;
         }
+        playersInRange.Clear();
     }
 }

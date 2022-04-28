@@ -133,8 +133,8 @@ public class Controller : MonoBehaviour
     {
         if (context.action.phase == InputActionPhase.Performed && pickupInRange != null)
         {
-            Debug.Log("Pickup");
             controlledTower.AttachWeapon(pickupInRange.gameObject);
+            pickupInRange.Grab();
         }
     }
 }
