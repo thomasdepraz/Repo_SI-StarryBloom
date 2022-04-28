@@ -114,7 +114,7 @@ public class Controller : MonoBehaviour
         }
     }
 
-    private bool isGrounded()
+    public bool isGrounded()
     {
         return Physics.Raycast(self.position + Vector3.up * 0.1f, -Vector3.up, 0.2f); ;
     }

@@ -92,6 +92,15 @@ public class Knight
     {
         SetTower(player);
 
+        if(player == null)
+        {
+            transform.SetParent(null);
+        }
+        else
+        {
+            transform.SetParent(player.transform);
+        }
+
         //Change costume 
         var renderer = transform.gameObject.GetComponent<KnightObject>().rend;
         renderer.material = PlayersManager.Instance.knightSkinsScheme.GetSkin(player != null ? player.ID : "", healthState == HealthState.NAKED);

@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 1246785603137168380}
   m_Layer: 0
   m_Name: KnightPrefabSkinned
-  m_TagString: Untagged
+  m_TagString: Knight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

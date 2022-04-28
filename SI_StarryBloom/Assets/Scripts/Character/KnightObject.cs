@@ -16,17 +16,22 @@ public class KnightObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(knight.possessionState == Knight.PossessionState.NEUTRAL && collision.gameObject.tag == "Player")
+        if(knight.possessionState == Knight.PossessionState.POSSESSED && collision.gameObject.tag == "Knight")
         {
-            var player = collision.transform.parent.gameObject.GetComponent<Player>();
-
-            if(player.controller.IsFalling())
+            if(knight.IsRoot())
             {
-                if (knight.tower == null)//the knight has no team
+                var player = transform.parent.gameObject.GetComponent<Player>();
+
+                if (player.controller.isGrounded())
                 {
-                    //Possess
-                    player.tower.AddKnight(this, player);
-                    knight.SetPlayer(player);
+                    KnightObject k = collision.gameObject.GetComponent<KnightObject>();
+
+                    if (k.knight.tower == null)//the knight has no team
+                    {
+                        //Possess
+                        player.tower.AddKnight(k, player);
+                        k.knight.SetPlayer(player);
+                    }
                 }
             }
         }
@@ -83,7 +88,7 @@ public class KnightObject : MonoBehaviour
         {
             for (int i = 0; i < knight.tower.knights.Count; i++)
             {
-                knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0.5f);
+                knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0.2f);
             }
 
             yield return new WaitForSeconds(0.2f);
@@ -98,7 +103,7 @@ public class KnightObject : MonoBehaviour
 
         for (int i = 0; i < knight.tower.knights.Count; i++)
         {
-            knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0.5f);
+            knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0.2f);
         }
 
         yield return new WaitForSeconds(0.2f);
