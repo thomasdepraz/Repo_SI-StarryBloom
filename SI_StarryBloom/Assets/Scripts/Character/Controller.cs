@@ -29,6 +29,7 @@ public class Controller : MonoBehaviour
     private float jumpForce;
     private float rotationSpeed;
 
+    public PickUp pickupInRange;
 
     //movement variables
     private Transform camTransform;
@@ -41,7 +42,6 @@ public class Controller : MonoBehaviour
     float verticalSpeed;
     private bool isMoving;
     private bool isJumping;
-
 
     // Start is called before the first frame update
     void Start()
@@ -132,7 +132,7 @@ public class Controller : MonoBehaviour
 
     public void Pickup(InputAction.CallbackContext context)
     {
-        if (context.action.phase == InputActionPhase.Performed)
+        if (context.action.phase == InputActionPhase.Performed && pickupInRange != null)
         {
             Debug.Log("Pickup");
             controlledTower.AttachWeapon(gameObject);

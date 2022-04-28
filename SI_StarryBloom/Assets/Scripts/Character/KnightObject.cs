@@ -5,6 +5,7 @@ using UnityEngine;
 public class KnightObject : MonoBehaviour
 {
     public Knight knight;
+    public Collider col;
     public SkinnedMeshRenderer rend;
     public bool invincible = false;
 

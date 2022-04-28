@@ -107,6 +107,8 @@ public class KnightTower
 
             weaponRb.velocity = Vector3.zero;
             weaponRb.AddForce(direction * 25, ForceMode.Impulse);
+
+            ChangeWeaponTag("PickUpWeapon");
         }
     }
 

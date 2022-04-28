@@ -262,6 +262,7 @@ MonoBehaviour:
     currentWeapon: {fileID: 0}
   controllerData: {fileID: 11400000, guid: 199c9c57390393044992a4030d2afbc0, type: 2}
   playerHeight: 1
+  PickUp: {fileID: 0}
 --- !u!114 &2522341802301047111
 MonoBehaviour:
   m_ObjectHideFlags: 0
