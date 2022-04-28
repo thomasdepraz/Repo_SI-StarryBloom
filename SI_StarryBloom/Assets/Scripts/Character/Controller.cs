@@ -73,7 +73,6 @@ public class Controller : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        Debug.Log(context.action.phase);
         Vector2 stick = context.ReadValue<Vector2>();
 
         if (context.action.phase == InputActionPhase.Started)
