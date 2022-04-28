@@ -148,10 +148,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - ColorAdd: {r: 0.30403852, g: 0.3301887, b: 0, a: 0}
-    - FresnelColor: {r: 0.5660378, g: 0.4169512, b: 0.06140977, a: 0}
+    - FresnelColor: {r: 0, g: 0, b: 0, a: 0}
     - Tiling: {r: 1, g: 1, b: 0, a: 0}
-    - Tiling1: {r: 15, g: 15, b: 0, a: 0}
-    - Tiling2: {r: 40, g: 40, b: 0, a: 0}
+    - Tiling1: {r: 10, g: 10, b: 0, a: 0}
+    - Tiling2: {r: 30, g: 30, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
