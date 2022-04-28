@@ -29,6 +29,7 @@ public class Controller : MonoBehaviour
     private float jumpForce;
     private float rotationSpeed;
 
+    public PickUp pickupInRange;
 
     //movement variables
     private Transform camTransform;
@@ -41,7 +42,6 @@ public class Controller : MonoBehaviour
     float verticalSpeed;
     private bool isMoving;
     private bool isJumping;
-
 
     // Start is called before the first frame update
     void Start()
@@ -66,14 +66,13 @@ public class Controller : MonoBehaviour
         rg = new Vector3(characterForward.z, 0, -characterForward.x);
 
         if (isMoving)
-            rb.velocity = lastVelocity;
+            rb.velocity = new Vector3(lastVelocity.x, rb.velocity.y, lastVelocity.z);
         else
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
     }
 
     public void Move(InputAction.CallbackContext context)
     {
-        Debug.Log(context.action.phase);
         Vector2 stick = context.ReadValue<Vector2>();
 
         if (context.action.phase == InputActionPhase.Started)
@@ -114,7 +113,7 @@ public class Controller : MonoBehaviour
         }
     }
 
-    private bool isGrounded()
+    public bool isGrounded()
     {
         return Physics.Raycast(self.position + Vector3.up * 0.1f, -Vector3.up, 0.2f); ;
     }
@@ -132,10 +131,10 @@ public class Controller : MonoBehaviour
 
     public void Pickup(InputAction.CallbackContext context)
     {
-        if (context.action.phase == InputActionPhase.Performed)
+        if (context.action.phase == InputActionPhase.Performed && pickupInRange != null)
         {
-            Debug.Log("Pickup");
-            controlledTower.AttachWeapon(gameObject);
+            controlledTower.AttachWeapon(pickupInRange.gameObject);
+            pickupInRange.Grab();
         }
     }
 }

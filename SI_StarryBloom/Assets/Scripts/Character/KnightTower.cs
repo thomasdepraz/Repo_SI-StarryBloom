@@ -77,6 +77,8 @@ public class KnightTower
         }
         //var weapon = myPlayer.creator.WeaponCreation();
         //AttachWeapon(weapon);
+
+        GameManager.Instance.UpdatePlayer(player);
     }
 
     public void DetachWeapon()
@@ -92,6 +94,7 @@ public class KnightTower
     {
         var topKnight = knights[knights.Count - 1].knight;
         weapon.transform.position = topKnight.transform.position + topKnight.transform.up * 1; //FIX MAGIC NUMBER
+        weapon.transform.rotation = topKnight.transform.rotation;
         currentWeapon = weapon;
         ChangeWeaponTag("Weapon");
         topKnight.SetJoint(weapon);
@@ -126,6 +129,7 @@ public class KnightTower
         //Set joint
         newKnight.knight.SetJoint(knights[1].knight);
 
+        GameManager.Instance.UpdatePlayer(player);
     }
 
     public void ChangeWeaponTag(string newTag)

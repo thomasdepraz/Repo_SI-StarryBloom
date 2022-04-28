@@ -9,7 +9,9 @@ public class GameManager : Singleton<GameManager>
     [HideInInspector] public PlayersManager playersManager;
     public LevelManager levelManager;
     public GameTimer timer;
+    public GameUIDraw playerUI;
     public CameraManager cameraManager;
+    public ItemSpawn spawner;
     
     public bool useTimer;
 
@@ -24,16 +26,11 @@ public class GameManager : Singleton<GameManager>
         //Get PlayersManager
         playersManager = PlayersManager.Instance;
 
-        StartGame();
+        //StartGame();
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    [ContextMenu("StartGame")]
     public void StartGame()
     {
         //Appear players
@@ -41,8 +38,14 @@ public class GameManager : Singleton<GameManager>
 
         //Appear UI
         timer.timerUI.SetActive(true);
-        //+ players UI
-        //playersManager.inputManager.playerCount;
+
+        playerUI.AppearUI(playersManager.players.Count);
+
+        //Update
+        foreach(var p in playersManager.players)
+        {
+            UpdatePlayer(p);
+        }
 
         //Start Timer
         if(useTimer)
@@ -50,7 +53,8 @@ public class GameManager : Singleton<GameManager>
             timer.RebootTimer();
         }
 
-        //
+        //Start spawner
+        spawner.StartSpawner();
     }
 
     public void EndGame()
@@ -86,6 +90,7 @@ public class GameManager : Singleton<GameManager>
         levelManager.ClearArena();
 
         //stop throwers
+        spawner.Stop();
 
         //Appear restart UI
 
@@ -99,6 +104,13 @@ public class GameManager : Singleton<GameManager>
 
 
 
+    }
+
+    public void UpdatePlayer(Player p)
+    {
+        var number = playersManager.players.IndexOf(p);
+        var height = p.tower.knights.Count;
+        playerUI.UpdateCounter(height,number);
     }
 
 
