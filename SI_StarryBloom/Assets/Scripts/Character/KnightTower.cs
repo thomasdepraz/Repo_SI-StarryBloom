@@ -92,6 +92,7 @@ public class KnightTower
     {
         var topKnight = knights[knights.Count - 1].knight;
         weapon.transform.position = topKnight.transform.position + topKnight.transform.up * 1; //FIX MAGIC NUMBER
+        weapon.transform.rotation = topKnight.transform.rotation;
         currentWeapon = weapon;
         ChangeWeaponTag("Weapon");
         topKnight.SetJoint(weapon);
