@@ -38,4 +38,16 @@ public class Player : MonoBehaviour
     {
         return tower.root.rigidbody;
     }
+
+    public void DestroyTower()
+    {
+        var knights = tower.knights;
+        while(knights.Count > 0)
+        {
+            Destroy(knights[0]);
+            knights.RemoveAt(0);
+        }
+
+        tower = null;
+    }
 }

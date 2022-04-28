@@ -107,7 +107,6 @@ public class Controller : MonoBehaviour
         {
             if (isGrounded())
             {
-                Debug.Log("Jump");
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             }
         }
@@ -117,7 +116,6 @@ public class Controller : MonoBehaviour
     {
         return Physics.Raycast(self.position + Vector3.up * 0.1f, -Vector3.up, 0.2f); ;
     }
-
     public bool IsFalling()
     {
         return !isGrounded() && rb.velocity.y < 0;

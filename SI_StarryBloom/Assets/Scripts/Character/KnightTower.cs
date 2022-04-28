@@ -41,11 +41,15 @@ public class KnightTower
         {
             root.SetWeight(1);
             root.rigidbody.constraints = UnityEngine.RigidbodyConstraints.None;
+            GameManager.Instance.cameraManager.RemoveTransformFromGroup(root.transform);
         }
 
         root = newRoot;
         root.SetWeight(1000);
         root.rigidbody.constraints = UnityEngine.RigidbodyConstraints.FreezeRotation;
+
+        //set camera target group
+        GameManager.Instance.cameraManager.AddTransformToGroup(root.transform);
     }
 
     public void EjectKnights(KnightObject startKnight, Vector3 ejectDirection)

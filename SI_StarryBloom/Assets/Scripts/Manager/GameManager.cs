@@ -6,11 +6,13 @@ public class GameManager : Singleton<GameManager>
 {
 
     [Header("References")]
-    public PlayersManager playersManager;
+    [HideInInspector] public PlayersManager playersManager;
+    public LevelManager levelManager;
     public GameTimer timer;
+    public CameraManager cameraManager;
+    
+    public bool useTimer;
 
-    [Header("Data")]
-    public float gameLength;
 
     private void Awake()
     {
@@ -39,9 +41,14 @@ public class GameManager : Singleton<GameManager>
 
         //Appear UI
         timer.timerUI.SetActive(true);
+        //+ players UI
+        //playersManager.inputManager.playerCount;
 
         //Start Timer
-        timer.RebootTimer();
+        if(useTimer)
+        {
+            timer.RebootTimer();
+        }
 
         //
     }
@@ -69,10 +76,21 @@ public class GameManager : Singleton<GameManager>
 
 
         //Destroy towers
+        foreach(var p in players)
+        {
+            p.DestroyTower();
+        }
+
 
         //Reload arena (clean, stop throwers...)
+        levelManager.ClearArena();
+
+        //stop throwers
 
         //Appear restart UI
+
+
+        //set player controller map
         players[0].input.SwitchCurrentActionMap("UIPlayer");
         for (int i = 1; i < players.Count; i++)
         {
