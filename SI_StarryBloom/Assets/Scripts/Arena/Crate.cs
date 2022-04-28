@@ -5,6 +5,7 @@ using UnityEngine;
 public class Crate : MonoBehaviour
 {
     public List<GameObject> spawnItems;
+    public GameObject particle;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -16,7 +17,12 @@ public class Crate : MonoBehaviour
 
     public void CrateExplode()
     {
-        Instantiate(spawnItems[Random.Range(0, spawnItems.Count)], transform.position, transform.rotation);
+        GameObject go = Instantiate(spawnItems[Random.Range(0, spawnItems.Count)], transform.position, transform.rotation);
+        if(go.tag == "Knight")
+        {
+            go.GetComponent<KnightObject>().SetAnimState(KnightObject.AnimState.PANIC);
+        }
+        Instantiate(particle,transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

@@ -11,6 +11,11 @@ public class KnightObject : MonoBehaviour
     public Animator anim;
     public bool invincible = false;
 
+    [Header("Particles")]
+    public GameObject impactParticle;
+    public GameObject poofParticle;
+    public GameObject sweatParticle;
+
     public void Start()
     {
         if(knight.rigidbody == null)
@@ -69,6 +74,9 @@ public class KnightObject : MonoBehaviour
                     {
                         impulsePoint = ((impulsePoint * w)  + contactPoints[i].point)/(w+1);
                     }*/
+
+                    //Impact particle
+                    Instantiate(impactParticle, collision.contacts[0].point, Quaternion.identity);
 
                     Vector3 ejectForce = weaponRigidbody.velocity;
 
@@ -146,6 +154,32 @@ public class KnightObject : MonoBehaviour
             case AnimState.PANIC:
                 anim.SetBool("isMoving", false);
                 anim.SetBool("isPanic", true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void SetHealthState(Knight.HealthState state)
+    {
+        knight.healthState = state;
+        switch (state)
+        {
+            case Knight.HealthState.ARMORED:
+
+                //deactivate rend
+                rend2.enabled = true;
+
+                //activate particle
+                sweatParticle.SetActive(false);
+                break;
+            case Knight.HealthState.NAKED:
+
+                //deactivate rend
+                rend2.enabled = false;
+
+                //activate particle
+                sweatParticle.SetActive(true);
                 break;
             default:
                 break;

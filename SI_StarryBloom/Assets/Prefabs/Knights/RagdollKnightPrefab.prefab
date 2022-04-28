@@ -587,7 +587,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.35702357, y: 0.010926417, z: -0.022208167}
+  m_ConnectedAnchor: {x: -0.3479976, y: 0.065900266, z: -0.02120157}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -907,7 +907,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.1804681, y: 0.00000058114523, z: 0.000000054948025}
+  m_ConnectedAnchor: {x: -0.1804681, y: 0.00000052899117, z: -0.000000024214383}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -1662,7 +1662,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.18046808, y: -0.00000050663954, z: 0.00000005029142}
+  m_ConnectedAnchor: {x: -0.18046816, y: -0.0000004470349, z: -0.00000006519258}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -2071,7 +2071,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.35702354, y: -0.010926506, z: -0.022208402}
+  m_ConnectedAnchor: {x: -0.34586456, y: -0.07291176, z: -0.020980867}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 2
@@ -2487,7 +2487,6 @@ GameObject:
   - component: {fileID: 7608558978135592105}
   - component: {fileID: 7608558978135592104}
   - component: {fileID: 7608558978135592107}
-  - component: {fileID: 1678134451694098632}
   - component: {fileID: 1733747052}
   m_Layer: 31
   m_Name: RagdollKnightPrefab
@@ -2638,91 +2637,6 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &1678134451694098632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7608558978135592106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72c268361753a634b87590c964b1010e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knight:
-    healthState: 0
-    possessionState: 0
-    tower:
-      player: {fileID: 0}
-      knights: []
-      root:
-        healthState: 0
-        possessionState: 0
-        tower:
-          player: {fileID: 0}
-          knights: []
-          root:
-            healthState: 0
-            possessionState: 0
-            tower:
-              player: {fileID: 0}
-              knights: []
-              root:
-                healthState: 0
-                possessionState: 0
-                tower:
-                  player: {fileID: 0}
-                  knights: []
-                  root:
-                    healthState: 0
-                    possessionState: 0
-                    tower:
-                      player: {fileID: 0}
-                      knights: []
-                      root:
-                        healthState: 0
-                        possessionState: 0
-                      currentWeapon: {fileID: 0}
-                    rigidbody: {fileID: 0}
-                    joint: {fileID: 0}
-                    transform: {fileID: 0}
-                    dummyPrefab: {fileID: 0}
-                    currentDummy: {fileID: 0}
-                    shieldPrefab: {fileID: 0}
-                  currentWeapon: {fileID: 0}
-                rigidbody: {fileID: 0}
-                joint: {fileID: 0}
-                transform: {fileID: 0}
-                dummyPrefab: {fileID: 0}
-                currentDummy: {fileID: 0}
-                shieldPrefab: {fileID: 0}
-              currentWeapon: {fileID: 0}
-            rigidbody: {fileID: 0}
-            joint: {fileID: 0}
-            transform: {fileID: 0}
-            dummyPrefab: {fileID: 0}
-            currentDummy: {fileID: 0}
-            shieldPrefab: {fileID: 0}
-          currentWeapon: {fileID: 0}
-        rigidbody: {fileID: 0}
-        joint: {fileID: 0}
-        transform: {fileID: 0}
-        dummyPrefab: {fileID: 0}
-        currentDummy: {fileID: 0}
-        shieldPrefab: {fileID: 0}
-      currentWeapon: {fileID: 0}
-    rigidbody: {fileID: 0}
-    joint: {fileID: 0}
-    transform: {fileID: 0}
-    dummyPrefab: {fileID: 0}
-    currentDummy: {fileID: 0}
-    shieldPrefab: {fileID: 0}
-  col: {fileID: 0}
-  rend: {fileID: 0}
-  rend2: {fileID: 0}
-  anim: {fileID: 0}
-  invincible: 0
 --- !u!95 &1733747052
 Animator:
   serializedVersion: 3

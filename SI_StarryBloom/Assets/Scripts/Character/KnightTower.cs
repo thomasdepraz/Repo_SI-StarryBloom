@@ -70,24 +70,37 @@ public class KnightTower
 
             knights[knights.Count - 1].knight.rigidbody.AddForce((ejectDirection + (Vector3.up * Random.Range(-1f,1f)) + (Vector3.right * Random.Range(-1f, 1f))) * 2f, ForceMode.Impulse);
 
-            knights[knights.Count - 1].knight.SetPlayer(null);
 
             if(knights[knights.Count - 1].knight.healthState == Knight.HealthState.ARMORED)
             {
-                knights[knights.Count - 1].knight.healthState = Knight.HealthState.NAKED;
+                knights[knights.Count - 1].SetHealthState(Knight.HealthState.NAKED);
             }
             else
             {
                 knights[knights.Count - 1].StartCoroutine( knights[knights.Count - 1].Destruction());
             }
 
+            knights[knights.Count - 1].knight.SetPlayer(null);
+
             knights[knights.Count - 1].SetAnimState(KnightObject.AnimState.PANIC);
 
             knights.RemoveAt(knights.Count - 1);
-
         }
-        //var weapon = myPlayer.creator.WeaponCreation();
-        //AttachWeapon(weapon);
+
+        //check startknight health state
+        //if(startKnight.knight.healthState == Knight.HealthState.ARMORED)
+        //{
+        //    startKnight.SetHealthState(Knight.HealthState.NAKED);
+        //}
+        //else
+        //{
+        //    //poof particle
+        //    GameObject.Instantiate(startKnight.poofParticle, startKnight.transform.position, Quaternion.identity);
+
+        //    //destroy object
+        //    GameObject.Destroy(startKnight);
+        //}
+
 
         GameManager.Instance.UpdatePlayer(player);
     }
@@ -130,6 +143,8 @@ public class KnightTower
     public void AddKnight(KnightObject newKnight, Player player)
     {
         var rootPosition = knights[0].transform.position;
+
+        GameObject.Instantiate(newKnight.poofParticle,rootPosition, Quaternion.identity);
 
         //Anims
         knights[0].SetAnimState(KnightObject.AnimState.DEFAULT);
