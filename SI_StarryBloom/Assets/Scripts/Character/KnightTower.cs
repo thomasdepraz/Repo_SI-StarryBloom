@@ -70,10 +70,10 @@ public class KnightTower
 
             knights[knights.Count - 1].knight.SetPlayer(null);
 
+            knights[knights.Count - 1].SetAnimState(KnightObject.AnimState.PANIC);
+
             knights.RemoveAt(knights.Count - 1);
 
-            //TEMP
-            //knights[i].gameObject.SetActive(false);
         }
         //var weapon = myPlayer.creator.WeaponCreation();
         //AttachWeapon(weapon);
@@ -116,6 +116,10 @@ public class KnightTower
     public void AddKnight(KnightObject newKnight, Player player)
     {
         var rootPosition = knights[0].transform.position;
+
+        //Anims
+        knights[0].SetAnimState(KnightObject.AnimState.DEFAULT);
+        newKnight.SetAnimState(KnightObject.AnimState.DEFAULT);
 
         //Add to list and set root
         knights.Insert(0, newKnight);
