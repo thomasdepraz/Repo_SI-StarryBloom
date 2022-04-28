@@ -119,7 +119,7 @@ public class Controller : MonoBehaviour
     }
     public bool IsFalling()
     {
-        return !isGrounded() && rb.velocity.y < 0;
+        return Physics.Raycast(self.position + Vector3.up * 0.1f, -Vector3.up, 0.1f); ;
     }
     public void Throw(InputAction.CallbackContext context)
     {
@@ -133,8 +133,7 @@ public class Controller : MonoBehaviour
     {
         if (context.action.phase == InputActionPhase.Performed && pickupInRange != null)
         {
-            Debug.Log("Pickup");
-            controlledTower.AttachWeapon(pickupInRange.gameObject);
+            controlledTower.AttachWeapon(pickupInRange.GetComponent<WeaponController>());
         }
     }
 }

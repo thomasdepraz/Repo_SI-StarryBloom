@@ -18,7 +18,12 @@ public class KnightObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(knight.possessionState == Knight.PossessionState.POSSESSED && collision.gameObject.tag == "Knight")
+        if (knight.possessionState == Knight.PossessionState.NEUTRAL && collision.gameObject.tag == "Ground")
+        {
+            knight.StartPanikIdle();
+        }
+
+        if (knight.possessionState == Knight.PossessionState.POSSESSED && collision.gameObject.tag == "Knight")
         {
             if(knight.IsRoot())
             {
@@ -89,21 +94,21 @@ public class KnightObject : MonoBehaviour
 
         yield return new WaitForSeconds(0.02f);
 
-        for (int x = 0; x <3; x ++)
+        for (int x = 0; x <4; x ++)
         {
             for (int i = 0; i < knight.tower.knights.Count; i++)
             {
                 knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0.2f);
             }
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.15f);
 
             for (int i = 0; i < knight.tower.knights.Count; i++)
             {
                 knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0f);
             }
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.15f);
         }
 
         for (int i = 0; i < knight.tower.knights.Count; i++)
@@ -111,7 +116,7 @@ public class KnightObject : MonoBehaviour
             knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0.2f);
         }
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
 
         for (int i = 0; i < knight.tower.knights.Count; i++)
         {
@@ -124,4 +129,16 @@ public class KnightObject : MonoBehaviour
         }
     }
 
+    public IEnumerator Destruction()
+    {
+        yield return new WaitForSeconds(0.02f);
+
+        rend.material.SetInteger("_Dead", 0);
+
+        rend.material.SetFloat("_HitColor", 0.2f);
+
+        yield return new WaitForSeconds(0.3f);
+
+        Destroy(gameObject);
+    }
 }
