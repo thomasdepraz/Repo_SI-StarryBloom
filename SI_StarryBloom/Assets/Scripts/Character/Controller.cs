@@ -40,6 +40,7 @@ public class Controller : MonoBehaviour
     Vector3 lastVelocity;
     float verticalSpeed;
     private bool isMoving;
+    private bool isJumping;
 
 
     // Start is called before the first frame update
@@ -67,7 +68,7 @@ public class Controller : MonoBehaviour
         if (isMoving)
             rb.velocity = lastVelocity;
         else
-            rb.velocity = Vector3.zero;
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -87,7 +88,7 @@ public class Controller : MonoBehaviour
         if (context.action.phase == InputActionPhase.Canceled)
         {
             isMoving = false;
-            rb.velocity = Vector3.zero;        
+            rb.velocity = new Vector3(0,rb.velocity.y,0);        
         }
     }
 
@@ -105,6 +106,7 @@ public class Controller : MonoBehaviour
 
         if (context.action.phase == InputActionPhase.Performed)
         {
+            isJumping = true;
             if (isGrounded())
             {
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
