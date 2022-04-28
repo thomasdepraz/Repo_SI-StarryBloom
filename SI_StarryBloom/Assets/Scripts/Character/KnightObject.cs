@@ -46,31 +46,34 @@ public class KnightObject : MonoBehaviour
         {
             if (knight.tower.knights.Count > 0 && !knight.IsRoot() && collision.gameObject.tag == "Weapon" && invincible == false)
             {
-                Debug.Log(collision.gameObject.name);
-                var tower = knight.tower;
-
-                Rigidbody weaponRigidbody = collision.gameObject.GetComponent<Rigidbody>();
-
-                /*ContactPoint[] contactPoints = collision.contacts;
-
-                Vector3 impulsePoint = contactPoints[0].point;
-
-                int w = 1;
-
-                for(int i = 0; i < contactPoints.Length; i++)
+                if (knight.tower.currentWeapon != collision.rigidbody.gameObject)
                 {
-                    impulsePoint = ((impulsePoint * w)  + contactPoints[i].point)/(w+1);
-                }*/
+                    Debug.Log(collision.gameObject.name);
+                    var tower = knight.tower;
 
-                Vector3 ejectForce = weaponRigidbody.velocity;
+                    Rigidbody weaponRigidbody = collision.gameObject.GetComponent<Rigidbody>();
 
-                ejectForce = new Vector3(ejectForce.x, 0f, ejectForce.z);
+                    /*ContactPoint[] contactPoints = collision.contacts;
 
-                tower.EjectKnights(this, ejectForce);
+                    Vector3 impulsePoint = contactPoints[0].point;
 
-                KnightObject rootKO = tower.root.transform.gameObject.GetComponent<KnightObject>();
+                    int w = 1;
 
-                rootKO.StartCoroutine(rootKO.InvincibilityFrame());
+                    for(int i = 0; i < contactPoints.Length; i++)
+                    {
+                        impulsePoint = ((impulsePoint * w)  + contactPoints[i].point)/(w+1);
+                    }*/
+
+                    Vector3 ejectForce = weaponRigidbody.velocity;
+
+                    ejectForce = new Vector3(ejectForce.x, 0f, ejectForce.z);
+
+                    tower.EjectKnights(this, ejectForce);
+
+                    KnightObject rootKO = tower.root.transform.gameObject.GetComponent<KnightObject>();
+
+                    rootKO.StartCoroutine(rootKO.InvincibilityFrame());
+                }
             }
         }
 
