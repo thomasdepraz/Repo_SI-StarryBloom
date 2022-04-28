@@ -127,6 +127,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnItems:
-  - {fileID: 71294091602859262, guid: 0439b8e57d3217340bac847e976d5c8e, type: 3}
-  - {fileID: 4961550649767472897, guid: 129cde9b0dea43645af5859d6f0a641b, type: 3}
-  - {fileID: 1894999612879046463, guid: ac0a8fb23c9b9d14bbe6eb3f343cacc6, type: 3}
+  - {fileID: 8080562028992447010, guid: 40e68610cd00d724eb03ffbde2655e7c, type: 3}
+  - {fileID: 5078970468250625889, guid: ef05d8584cc3a9e45beb4639a95964e2, type: 3}
