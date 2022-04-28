@@ -94,6 +94,7 @@ public class KnightTower
     {
         var topKnight = knights[knights.Count - 1].knight;
         weapon.transform.position = topKnight.transform.position + topKnight.transform.up * 1; //FIX MAGIC NUMBER
+        weapon.transform.rotation = topKnight.transform.rotation;
         currentWeapon = weapon;
         ChangeWeaponTag("Weapon");
         topKnight.SetJoint(weapon);
@@ -109,8 +110,6 @@ public class KnightTower
 
             weaponRb.velocity = Vector3.zero;
             weaponRb.AddForce(direction * 25, ForceMode.Impulse);
-
-            ChangeWeaponTag("PickUpWeapon");
         }
     }
 
