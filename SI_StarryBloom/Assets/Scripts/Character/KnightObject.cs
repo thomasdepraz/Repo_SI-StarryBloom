@@ -8,6 +8,7 @@ public class KnightObject : MonoBehaviour
     public Collider col;
     public SkinnedMeshRenderer rend;
     public SkinnedMeshRenderer rend2;
+    public Animator anim;
     public bool invincible = false;
 
     public void Start()
@@ -118,6 +119,28 @@ public class KnightObject : MonoBehaviour
         for (int i = 0; i < knight.tower.knights.Count; i++)
         {
             knight.tower.knights[i].invincible = false;
+        }
+    }
+
+    public enum AnimState {DEFAULT, WALKING, PANIC};
+    public void SetAnimState(AnimState state)
+    {
+        switch (state)
+        {
+            case AnimState.DEFAULT:
+                anim.SetBool("isMoving", false);
+                anim.SetBool("isPanic", false);
+                break;
+            case AnimState.WALKING:
+                anim.SetBool("isMoving", true);
+                anim.SetBool("isPanic", false);
+                break;
+            case AnimState.PANIC:
+                anim.SetBool("isMoving", false);
+                anim.SetBool("isPanic", true);
+                break;
+            default:
+                break;
         }
     }
 

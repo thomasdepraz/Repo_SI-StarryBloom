@@ -41,7 +41,6 @@ public class Controller : MonoBehaviour
     Vector3 lastVelocity;
     float verticalSpeed;
     private bool isMoving;
-    private bool isJumping;
 
     // Start is called before the first frame update
     void Start()
@@ -66,9 +65,15 @@ public class Controller : MonoBehaviour
         rg = new Vector3(characterForward.z, 0, -characterForward.x);
 
         if (isMoving)
+        {
+            controlledTower.knights[0].SetAnimState(KnightObject.AnimState.WALKING);
             rb.velocity = new Vector3(lastVelocity.x, rb.velocity.y, lastVelocity.z);
+        }
         else
+        {
+            controlledTower.knights[0].SetAnimState(KnightObject.AnimState.DEFAULT);
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -105,7 +110,6 @@ public class Controller : MonoBehaviour
 
         if (context.action.phase == InputActionPhase.Performed)
         {
-            isJumping = true;
             if (isGrounded())
             {
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
