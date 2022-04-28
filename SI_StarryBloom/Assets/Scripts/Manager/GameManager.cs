@@ -11,6 +11,7 @@ public class GameManager : Singleton<GameManager>
     public GameTimer timer;
     public GameUIDraw playerUI;
     public CameraManager cameraManager;
+    public ItemSpawn spawner;
     
     public bool useTimer;
 
@@ -52,7 +53,8 @@ public class GameManager : Singleton<GameManager>
             timer.RebootTimer();
         }
 
-        //
+        //Start spawner
+        spawner.StartSpawner();
     }
 
     public void EndGame()
@@ -88,6 +90,7 @@ public class GameManager : Singleton<GameManager>
         levelManager.ClearArena();
 
         //stop throwers
+        spawner.Stop();
 
         //Appear restart UI
 

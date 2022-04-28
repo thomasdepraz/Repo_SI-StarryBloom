@@ -11,17 +11,22 @@ public class ItemSpawn : MonoBehaviour
 
     public float minThrowStrength;
     public float maxThrowStrength;
-
-    public void Start()
+    private Coroutine spawnRoutine;
+    public void StartSpawner()
     {
-        Spawn(); //why tf does it not wait for the coroutine tho?
+        spawnRoutine = StartCoroutine(SpawnTimer());
+    }
+
+    public void Stop()
+    {
+        StopCoroutine(spawnRoutine);
     }
 
     private void Spawn()
     {
-        StartCoroutine(SpawnTimer());
         var clone = Instantiate(spawnedCrate, spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position, spawnPoints[Random.Range(0, spawnPoints.Count)].transform.rotation);
         clone.GetComponent<Rigidbody>().AddForce((spawnTarget.transform.position - clone.transform.position) * Random.Range(minThrowStrength, maxThrowStrength));
+        spawnRoutine = StartCoroutine(SpawnTimer());
     }
 
     private IEnumerator SpawnTimer()
