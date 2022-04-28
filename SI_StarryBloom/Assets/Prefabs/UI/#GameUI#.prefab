@@ -537,7 +537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7abb99734bad40e46b6d7132cd99adbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfPlayers: 4
   playersInGame:
   - {fileID: 289477933949377501}
   - {fileID: 289477934787201258}
@@ -852,7 +851,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.95
+  m_fontSize: 33.5
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
