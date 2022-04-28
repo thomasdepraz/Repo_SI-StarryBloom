@@ -6,6 +6,7 @@ public class KnightObject : MonoBehaviour
 {
     public Knight knight;
     public SkinnedMeshRenderer rend;
+    public SkinnedMeshRenderer rend2;
     public bool invincible = false;
 
     public void Start()
