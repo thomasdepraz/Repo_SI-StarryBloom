@@ -95,5 +95,8 @@ public class Knight
         //Change costume 
         var renderer = transform.gameObject.GetComponent<KnightObject>().rend;
         renderer.material = PlayersManager.Instance.knightSkinsScheme.GetSkin(player != null ? player.ID : "", healthState == HealthState.NAKED);
+
+        var renderer2 = transform.gameObject.GetComponent<KnightObject>().rend2;
+        renderer2.material = PlayersManager.Instance.knightSkinsScheme.GetSkin(player != null ? player.ID : "", healthState == HealthState.NAKED);
     }
 }

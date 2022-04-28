@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2033199cf3e74dc4fb6876af6a6b00ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knightPrefab: {fileID: 1246785603137168368, guid: 5921cf85f55d0b04296c635f00d9867b, type: 3}
+  knightPrefab: {fileID: 5078970468250625889, guid: ef05d8584cc3a9e45beb4639a95964e2, type: 3}
   dummyPrefab: {fileID: 3304502570862021746, guid: 10ddfbd13d1e6774ca10f8207fbff2bd, type: 3}
   defaultWeaponPrefab: {fileID: 8080562028992447010, guid: fb33a241d64965f4abc2303cf27bde04, type: 3}
   knightCount: 5
