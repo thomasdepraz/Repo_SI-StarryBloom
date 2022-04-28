@@ -21,15 +21,20 @@ public class BouncingObject : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         GameObject enteringObject = other.gameObject;
-        //GameObject enteringParent = enteringObject.transform.parent.gameObject;
-
-        if (enteringObject.GetComponent<Rigidbody>() != null)
+        if(enteringObject.tag == "Knight")
         {
-            
-            enteringObject.GetComponent<Rigidbody>().AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
-        }
+            Player p = enteringObject.GetComponent<KnightObject>().knight.tower.player;
+            Controller controller = p.controller;
 
-        Debug.Log(enteringObject);
+            Rigidbody rb = controller.rb;
+
+            if (rb != null)
+            {
+                rb.AddForce(Vector3.up * bounceForce, ForceMode.Impulse);
+            }
+
+        }
+        
         //Debug.Log(enteringParent);
 
         /*if (enteringObject.GetComponentInParent<Controller>() != null)
