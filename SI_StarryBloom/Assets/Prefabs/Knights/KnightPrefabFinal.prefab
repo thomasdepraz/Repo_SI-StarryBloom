@@ -1064,6 +1064,7 @@ MonoBehaviour:
   rend2: {fileID: 7325187397192087112}
   anim: {fileID: 5560111245312917295}
   invincible: 0
+  joint: {fileID: 0}
   impactParticle: {fileID: 5969730089416553710, guid: ae9d2f4472fb2574cb97e150092e308f, type: 3}
   poofParticle: {fileID: 6960990105870421648, guid: a63b090271f2fe14186002344889c771, type: 3}
   sweatParticle: {fileID: 8992042988079964714}
@@ -1165,7 +1166,7 @@ ConfigurableJoint:
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
-    positionSpring: 8000
+    positionSpring: 5000
     positionDamper: 2
     maximumForce: 3.4028233e+38
   m_ProjectionMode: 0

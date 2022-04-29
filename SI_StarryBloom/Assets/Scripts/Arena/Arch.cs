@@ -16,7 +16,6 @@ public class Arch : Singleton<Arch>
         foreach(var ark in archs)
         {
             ark.SetActive(false);
-            archs.Add(ark);
         }
     }
 
