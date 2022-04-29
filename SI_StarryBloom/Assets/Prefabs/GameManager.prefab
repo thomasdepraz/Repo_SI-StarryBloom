@@ -412,7 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 8222735291259903097}
   targetGroup: {fileID: 8222735290208398647}
-  targetRadius: 5
+  targetRadius: 7
 --- !u!1001 &443949235277472188
 PrefabInstance:
   m_ObjectHideFlags: 0
