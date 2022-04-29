@@ -24,5 +24,8 @@ public class Crate : MonoBehaviour
         }
         Instantiate(particle,transform.position, Quaternion.identity);
         Destroy(gameObject);
+
+        //Sound
+        SoundManager.Instance.PlaySound(go.tag == "Knight" ? "SFX_Throw2" : "SFX_Throw1", false);
     }
 }

@@ -87,6 +87,9 @@ public class KnightTower
             knights.RemoveAt(knights.Count - 1);
         }
 
+        //Sound
+        SoundManager.Instance.PlaySound("SFX_CounterSword3", false);
+
         //check startknight health state
         //if(startKnight.knight.healthState == Knight.HealthState.ARMORED)
         //{
@@ -124,6 +127,9 @@ public class KnightTower
         currentWeapon = weapon;
         ChangeWeaponTag("Weapon");
         topKnight.SetJoint(weapon.gameObject);
+
+        //Sound
+        SoundManager.Instance.PlaySound("SFX_NewSword", false);
     }
 
     public void ThrowWeapon(Vector3 direction)
@@ -139,6 +145,9 @@ public class KnightTower
 
             weaponRb.velocity = Vector3.zero;
             weaponRb.AddForce(cWeapon.transform.forward * 2f, ForceMode.Impulse);
+
+            //Sound
+            SoundManager.Instance.PlaySound("SFX_Throw3", false);
         }
     }
 
@@ -165,6 +174,9 @@ public class KnightTower
         newKnight.knight.SetJoint(knights[1].knight);
 
         GameManager.Instance.UpdatePlayer(player);
+
+        //Sound
+        SoundManager.Instance.PlaySound("SFX_NewKnight", false);
     }
 
     public void ChangeWeaponTag(string newTag)
