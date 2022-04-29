@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -111,6 +112,7 @@ public class GameManager : Singleton<GameManager>
             players[i].input.SwitchCurrentActionMap("Empty");
         }
 
+        EventSystem.current.SetSelectedGameObject(victoryScreen.restartButton);
         //Appear restart UI
         victoryScreen.SetupScreen(players);
     }
