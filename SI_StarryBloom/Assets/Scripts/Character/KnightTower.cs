@@ -181,6 +181,13 @@ public class KnightTower
 
         //Sound
         SoundManager.Instance.PlaySound("SFX_NewKnight", false);
+
+        //Victory
+        if(knights.Count == GameManager.Instance.heightObjective)
+        {
+            GameManager.Instance.EndGame();
+        }
+
     }
 
     public void ChangeWeaponTag(string newTag)

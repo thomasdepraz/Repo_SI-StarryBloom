@@ -7,7 +7,7 @@ public class GameTimer : MonoBehaviour
 {
     [Header("Clock")]
     [SerializeField] float gameDuration = 5f * 60f;
-    private IEnumerator clockSpendTime;
+    public IEnumerator clockSpendTime;
     [field: SerializeField] public float TimeLeft { get; private set; }
 
     public UnityEvent onTimerEnd;

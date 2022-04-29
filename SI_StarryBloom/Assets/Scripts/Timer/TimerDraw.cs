@@ -13,6 +13,8 @@ public class TimerDraw : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(time.TimeLeft / 60f);
         int seconds = Mathf.FloorToInt(time.TimeLeft % 60f);
+        if (minutes == 0 && seconds == 10)
+            SoundManager.Instance.PlaySound("SFX_Timer", false);
         timeLeft.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
