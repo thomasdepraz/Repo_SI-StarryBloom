@@ -83,7 +83,7 @@
                 {
                     "name": "",
                     "id": "4643e709-3768-452e-8345-55ecc4b8592e",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -117,6 +117,17 @@
                     "name": "",
                     "id": "78908529-a5c1-4035-9e3c-61af7f8c100d",
                     "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pickup",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8fac9251-5836-4ef0-8584-7804e90cf27b",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

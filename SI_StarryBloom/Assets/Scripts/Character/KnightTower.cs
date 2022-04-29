@@ -24,7 +24,6 @@ public class KnightTower
         {
             knights[i].knight.SetPlayer(player);
 
-
             if(i<knights.Count-1)
             {
                 knights[i].knight.SetJoint(knights[i + 1].knight);
@@ -203,5 +202,6 @@ public class KnightTower
             currentWeapon.transform.GetChild(i).tag = newTag;
         }
     }
+
 
 }

@@ -96,7 +96,7 @@ public class Knight
 
         if(player == null)
         {
-            transform.SetParent(null);
+            transform.SetParent(GameManager.Instance.levelManager.weaponsParent);
         }
         else
         {
