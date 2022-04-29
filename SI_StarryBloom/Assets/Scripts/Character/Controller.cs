@@ -138,7 +138,7 @@ public class Controller : MonoBehaviour
 
     public void Pickup(InputAction.CallbackContext context)
     {
-        if (context.action.phase == InputActionPhase.Performed && pickupInRange != null)
+        if (context.action.phase == InputActionPhase.Performed && pickupInRange != null && controlledTower.weaponIsHeld == false)
         {
             controlledTower.AttachWeapon(pickupInRange.GetComponent<WeaponController>());
             pickupInRange.Grab();
