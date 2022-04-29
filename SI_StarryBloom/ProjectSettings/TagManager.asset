@@ -8,6 +8,7 @@ TagManager:
   - PickUpWeapon
   - Knight
   - Ground
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Walls
+  - Crate
   - 
   - 
   - 

@@ -26,6 +26,9 @@ public class Crate : MonoBehaviour
 
             ko.SetAnimState(KnightObject.AnimState.PANIC);
 
+            Knight knight = new Knight(go);
+            ko.knight = knight;
+
             ko.knight.dummyPrefab = dummyPrefab;
         }
         Instantiate(particle,transform.position, Quaternion.identity);
