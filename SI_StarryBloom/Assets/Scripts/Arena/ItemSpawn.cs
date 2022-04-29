@@ -32,7 +32,15 @@ public class ItemSpawn : MonoBehaviour
 
     private IEnumerator SpawnTimer()
     {
-        yield return new WaitForSeconds(Random.Range(1f, 5f));
+        int playerNumber = PlayersManager.Instance.transform.childCount;
+
+        int propsNumber = GameManager.Instance.levelManager.transform.GetChild(0).childCount + GameManager.Instance.levelManager.transform.GetChild(1).childCount;
+
+        propsNumber = Mathf.Min(propsNumber, 10);
+
+        float spawnInterval = (Random.Range(2f, 5f) * ((float)propsNumber * 0.2f))/(float)playerNumber;
+
+        yield return new WaitForSeconds(spawnInterval);
         Spawn();
     }
 

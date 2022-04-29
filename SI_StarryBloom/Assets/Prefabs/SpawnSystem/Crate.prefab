@@ -97,8 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa9b0bd3031c3b4b9eadbbeba25dd5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnItems:
+  knightItems:
   - {fileID: 5078970468250625889, guid: ef05d8584cc3a9e45beb4639a95964e2, type: 3}
+  weaponItems:
   - {fileID: 3445810123865562453, guid: 34a6225ef685795408620eb2a30f6093, type: 3}
   - {fileID: 4516718822287320892, guid: f41190aaf586d594d98f92b12a2b1e48, type: 3}
   - {fileID: 4257847942130265613, guid: dae29802f99003d4887ce662839aff45, type: 3}
