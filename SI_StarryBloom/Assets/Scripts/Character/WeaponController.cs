@@ -12,6 +12,8 @@ public class WeaponController : MonoBehaviour
 
     public KnightTower myTower;
 
+    public GameObject particle;
+
     private void Start()
     {
         baseAngularDrag = rb.angularDrag;
@@ -55,5 +57,7 @@ public class WeaponController : MonoBehaviour
             myTower.DetachWeapon();
 
         Destroy(gameObject);
+
+        Instantiate(particle, transform.position, Quaternion.identity);
     }
 }
