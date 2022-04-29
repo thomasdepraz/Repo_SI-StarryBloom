@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3938421480585467306}
   - component: {fileID: 227750195699443125}
   - component: {fileID: 8677335177922749459}
+  - component: {fileID: 5676513909691960822}
+  - component: {fileID: 4381465202491444740}
   m_Layer: 5
   m_Name: DefaultButton
   m_TagString: Untagged
@@ -101,10 +103,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7075472, g: 0.5773852, b: 0.5773852, a: 1}
+    m_NormalColor: {r: 0.7058824, g: 0.5764706, b: 0.5764706, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.7058824, g: 0.5764706, b: 0.5764706, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -190,6 +192,34 @@ MonoBehaviour:
             m_StringArgument: SFX_Selection2
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 5676513909691960822}
+          m_TargetAssemblyTypeName: ButtonAnim, Assembly-CSharp
+          m_MethodName: Select
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: SFX_Selection2
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5676513909691960822}
+          m_TargetAssemblyTypeName: ButtonAnim, Assembly-CSharp
+          m_MethodName: DeSelect
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &8677335177922749459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +232,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea765233783d6a94aa822836e154429c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5676513909691960822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3938421480585467316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf32af76c0ef91409c4e3c1a682de2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 4381465202491444740}
+--- !u!95 &4381465202491444740
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3938421480585467316}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 68705a34f0684164c861b62ce8b7079d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6193278124612718080
 PrefabInstance:
   m_ObjectHideFlags: 0
