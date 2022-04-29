@@ -30,7 +30,9 @@ public class GameManager : Singleton<GameManager>
         //Get PlayersManager
         playersManager = PlayersManager.Instance;
 
-        if(playersManager.players.Count>0)
+        musicSource.Play();
+
+        if (playersManager.players.Count>0)
         {
             yield return new WaitForSeconds(2.7f);
             StartGame();
@@ -41,7 +43,7 @@ public class GameManager : Singleton<GameManager>
     [ContextMenu("StartGame")]
     public void StartGame()
     {
-        musicSource.Play();
+        
 
         //Appear players
         playersManager.SpawnPlayers();
