@@ -10,8 +10,6 @@ public class KnightTower
     public Knight root;
     public WeaponController currentWeapon;
 
-    public bool weaponIsHeld = false;
-
     public KnightTower(List<KnightObject> knights, Player player)
     {
         this.knights = knights;
@@ -114,11 +112,9 @@ public class KnightTower
     {
         knights[knights.Count - 1].knight.DeleteJoint();
 
-        //ChangeWeaponTag("PickUpWeapon");
+        ChangeWeaponTag("PickUpWeapon");
 
         currentWeapon = null;
-
-        weaponIsHeld = false;
     }
 
     public void AttachWeapon(WeaponController weapon)
@@ -131,8 +127,6 @@ public class KnightTower
         currentWeapon = weapon;
         ChangeWeaponTag("Weapon");
         topKnight.SetJoint(weapon.gameObject);
-
-        weaponIsHeld = true;
 
         //Sound
         SoundManager.Instance.PlaySound("SFX_NewSword", false);
