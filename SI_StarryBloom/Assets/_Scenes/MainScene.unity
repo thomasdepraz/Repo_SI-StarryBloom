@@ -3602,7 +3602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1933966256322207174, guid: 3c747a0bda88c5747b32d9eb8532d5a6, type: 3}
       propertyPath: field of view
-      value: 34.37987
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1933966256322207175, guid: 3c747a0bda88c5747b32d9eb8532d5a6, type: 3}
       propertyPath: m_RootOrder
@@ -3626,15 +3626,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1933966256322207175, guid: 3c747a0bda88c5747b32d9eb8532d5a6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.38268334
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 1933966256322207175, guid: 3c747a0bda88c5747b32d9eb8532d5a6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000015896628
+      value: 0.000000022481217
       objectReference: {fileID: 0}
     - target: {fileID: 1933966256322207175, guid: 3c747a0bda88c5747b32d9eb8532d5a6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000006584597
+      value: -0.000000009312025
       objectReference: {fileID: 0}
     - target: {fileID: 1933966256322207175, guid: 3c747a0bda88c5747b32d9eb8532d5a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3808,19 +3808,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8222735291259903096, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.38268334
+      value: 0.38268343
       objectReference: {fileID: 0}
     - target: {fileID: 8222735291259903096, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000015896628
+      value: 0.000000022481217
       objectReference: {fileID: 0}
     - target: {fileID: 8222735291259903096, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000006584597
+      value: -0.000000009312025
       objectReference: {fileID: 0}
     - target: {fileID: 8222735291259903097, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7780219
+      value: 1.7767441
       objectReference: {fileID: 0}
     - target: {fileID: 8453084477030019647, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
       propertyPath: m_LocalPosition.x
