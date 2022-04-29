@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 2005090904}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &667888297
@@ -3504,6 +3504,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37c74edf3a1ffc4792be008515db8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2005090904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5624890940985467700, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
+  m_PrefabInstance: {fileID: 8222735290081520929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2027994439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3545,11 +3550,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1933966256322207175, guid: 3c747a0bda88c5747b32d9eb8532d5a6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000015597683
+      value: 0.00000001589662
       objectReference: {fileID: 0}
     - target: {fileID: 1933966256322207175, guid: 3c747a0bda88c5747b32d9eb8532d5a6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000064607697
+      value: -0.0000000065845938
       objectReference: {fileID: 0}
     - target: {fileID: 1933966256322207175, guid: 3c747a0bda88c5747b32d9eb8532d5a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3635,7 +3640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4952651950958206297, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
       propertyPath: gameDuration
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8222735289819517361, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
       propertyPath: startingPositions.Array.size
@@ -3715,11 +3720,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8222735291259903096, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000015597683
+      value: 0.00000001589662
       objectReference: {fileID: 0}
     - target: {fileID: 8222735291259903096, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000064607697
+      value: -0.0000000065845938
       objectReference: {fileID: 0}
     - target: {fileID: 8222735291259903097, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
