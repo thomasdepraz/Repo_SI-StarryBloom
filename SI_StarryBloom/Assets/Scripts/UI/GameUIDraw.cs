@@ -16,6 +16,14 @@ public class GameUIDraw : MonoBehaviour
         }
     }
 
+    public void HideUI()
+    {
+        for (int i = 0; i < playersInGame.Count; i++)
+        {
+            playersInGame[i].SetActive(false);
+        }
+    }
+
     public void UpdateCounter(int number, int player)
     {
         counters[player].text = number.ToString();

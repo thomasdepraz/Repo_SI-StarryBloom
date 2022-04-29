@@ -12,6 +12,7 @@ public class GameManager : Singleton<GameManager>
     public GameUIDraw playerUI;
     public CameraManager cameraManager;
     public ItemSpawn spawner;
+    public VictoryScript victoryScreen;
     
     public bool useTimer;
 
@@ -59,24 +60,10 @@ public class GameManager : Singleton<GameManager>
 
     public void EndGame()
     {
-        //Get winner
-        Player winner = null;
+        //Get order
         var players = playersManager.players;
-        for (int i = 0; i < players.Count; i++)
-        {
-            if (winner = null) winner = players[i];
-            if (players[i].tower.knights.Count > winner.tower.knights.Count)
-            {
-                winner = players[i];
-            }
-        }
 
-        //Check draw
-        foreach(var p in players)
-        {
-            if (p != winner && p.tower.knights.Count == winner.tower.knights.Count)
-                winner = null;
-        }
+        players.Sort();
 
 
         //Destroy towers
@@ -92,8 +79,9 @@ public class GameManager : Singleton<GameManager>
         //stop throwers
         spawner.Stop();
 
-        //Appear restart UI
-
+        //Hide inGameUI
+        timer.timerUI.SetActive(false);
+        playerUI.HideUI();
 
         //set player controller map
         players[0].input.SwitchCurrentActionMap("UIPlayer");
@@ -102,8 +90,8 @@ public class GameManager : Singleton<GameManager>
             players[i].input.SwitchCurrentActionMap("Empty");
         }
 
-
-
+        //Appear restart UI
+        victoryScreen.SetupScreen(players);
     }
 
     public void UpdatePlayer(Player p)

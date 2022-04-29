@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IComparable
 {
     public string ID;
     public PlayerInput input;
@@ -41,11 +42,14 @@ public class Player : MonoBehaviour
 
     public void DestroyTower()
     {
+        controller.enabled = false;
+
         var knights = tower.knights;
         while(knights.Count > 0)
         {
-            Destroy(knights[0]);
-            knights.RemoveAt(0);
+            Instantiate(knights[knights.Count - 1].poofParticle, knights[knights.Count - 1].gameObject.transform.position, Quaternion.identity);
+            GameObject.Destroy(knights[knights.Count-1].gameObject);
+            knights.RemoveAt(knights.Count - 1);
         }
 
         tower = null;
@@ -59,5 +63,14 @@ public class Player : MonoBehaviour
         rb.AddTorque(rb.transform.up * 20f, ForceMode.VelocityChange);
 
         wc.StartThrowState();
+    }
+
+    public int CompareTo(object other)
+    {
+        if (other == null) return 1;
+
+        Player otherPlayer = other as Player;
+
+        return tower.knights.Count.CompareTo(otherPlayer.tower.knights.Count);
     }
 }

@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class VictoryScript : MonoBehaviour
 {
+    public GameObject screen;
+    public GameObject invisibleButton;
+
     public Sprite sunSprite;
     public Sprite moonSprite;
     public Sprite crossSprite;
@@ -14,6 +18,10 @@ public class VictoryScript : MonoBehaviour
 
     public void SetupScreen(List<Player> players)
     {
+        screen.SetActive(true);
+
+        EventSystem.current.firstSelectedGameObject = invisibleButton;
+
         for (int i = 0; i < players.Count; i++)
         {
             heads[i].gameObject.SetActive(true);
@@ -33,6 +41,21 @@ public class VictoryScript : MonoBehaviour
                     break;
             }
         }
+
+    }
+
+    public void RestartGame()
+    {
+        for (int i = 0; i < heads.Count; i++)
+        {
+            heads[i].gameObject.SetActive(true);
+        }
+        screen.SetActive(false);
+
+        GameManager.Instance.StartGame();
+    }
+    public void MainMenu()
+    {
 
     }
 }
