@@ -24,7 +24,7 @@ public class KnightObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (knight.possessionState == Knight.PossessionState.NEUTRAL && collision.gameObject.tag == "Ground")
+        if (knight.possessionState == Knight.PossessionState.NEUTRAL && collision.gameObject.tag == "Floor")
         {
             knight.StartPanikIdle();
         }
@@ -44,6 +44,8 @@ public class KnightObject : MonoBehaviour
                         //Possess
                         player.tower.AddKnight(k, player);
                         k.knight.SetPlayer(player);
+
+                        k.sweatParticle.SetActive(false);
                     }
                 }
             }
@@ -90,6 +92,8 @@ public class KnightObject : MonoBehaviour
                     KnightObject rootKO = tower.root.transform.gameObject.GetComponent<KnightObject>();
 
                     rootKO.StartCoroutine(rootKO.InvincibilityFrame());
+
+                    collision.gameObject.GetComponent<WeaponController>().DestroyWeapon();
                 }
             }
         }

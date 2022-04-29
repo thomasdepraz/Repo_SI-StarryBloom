@@ -114,6 +114,9 @@ public class KnightTower
 
         //ChangeWeaponTag("PickUpWeapon");
 
+        if(currentWeapon != null)
+        currentWeapon.myTower = null;
+
         currentWeapon = null;
     }
 
@@ -127,6 +130,7 @@ public class KnightTower
         currentWeapon = weapon;
         ChangeWeaponTag("Weapon");
         topKnight.SetJoint(weapon.gameObject);
+        weapon.myTower = this;
 
         //Sound
         SoundManager.Instance.PlaySound("SFX_NewSword", false);
