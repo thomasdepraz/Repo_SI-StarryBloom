@@ -142,12 +142,12 @@ TextureImporter:
       name: T_UIAtlas_02(1)_0
       rect:
         serializedVersion: 2
-        x: 58
+        x: 41
         y: 1094
-        width: 923
+        width: 940
         height: 848
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,12 +163,12 @@ TextureImporter:
       name: T_UIAtlas_02(1)_1
       rect:
         serializedVersion: 2
-        x: 1068
+        x: 1052
         y: 1094
-        width: 923
+        width: 939
         height: 848
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: T_UIAtlas_02(1)_2
       rect:
         serializedVersion: 2
-        x: 58
+        x: 41
         y: 127
-        width: 923
+        width: 940
         height: 863
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -205,12 +205,12 @@ TextureImporter:
       name: T_UIAtlas_02(1)_3
       rect:
         serializedVersion: 2
-        x: 1068
+        x: 1054
         y: 127
-        width: 923
+        width: 937
         height: 863
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

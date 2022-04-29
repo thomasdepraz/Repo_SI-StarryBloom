@@ -25,6 +25,7 @@ public class TimerDraw : MonoBehaviour
         if (minutes == 0 && seconds == 10 && !doOnceOther)
         {
             SoundManager.Instance.PlaySound("SFX_Timer", false);
+            LeanTween.scale(timeLeft.transform.parent.gameObject, Vector3.one * 1.2f, 0.2f).setLoopPingPong(25);
             doOnceOther = true;
         }
         timeLeft.text = string.Format("{0:00}:{1:00}", minutes, seconds);

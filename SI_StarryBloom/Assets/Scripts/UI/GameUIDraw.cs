@@ -21,11 +21,22 @@ public class GameUIDraw : MonoBehaviour
         for (int i = 0; i < playersInGame.Count; i++)
         {
             playersInGame[i].SetActive(false);
+            LeanTween.cancel(playersInGame[i]);
         }
     }
 
     public void UpdateCounter(int number, int player)
     {
-        counters[player].text = number.ToString();
+        counters[player].text = $"{number}/10";
+
+        //Set tweening
+        if(number == 7)
+        {
+            LeanTween.scale(playersInGame[player], Vector3.one * 1.2f, 0.2f).setLoopPingPong(1000000);
+        }
+        else if(number < 7)
+        {
+            LeanTween.cancel(playersInGame[player]);
+        }
     }
 }
