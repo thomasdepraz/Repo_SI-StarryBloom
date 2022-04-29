@@ -26,7 +26,6 @@ public class SoundManager : Singleton<SoundManager>
         var clip = sounds[soundName];
         if (clip == null) return;
 
-
         var source = GetAudioSource();
         source.clip = clip;
         source.loop = looping;
@@ -51,10 +50,4 @@ public class SoundManager : Singleton<SoundManager>
         return source;
     }
 
-}
-
-[CreateAssetMenu(fileName = "Sound Data", menuName = "Data/Sound Data")]
-public class SoundData : ScriptableObject
-{
-    public List<AudioClip> clips = new List<AudioClip>();
 }
