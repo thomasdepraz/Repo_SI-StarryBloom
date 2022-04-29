@@ -35,7 +35,7 @@ public class KnightObject : MonoBehaviour
             {
                 var player = transform.parent.gameObject.GetComponent<Player>();
 
-                if (player.controller.isGrounded())
+                //if (!player.controller.isGrounded())
                 {
                     KnightObject k = collision.gameObject.GetComponent<KnightObject>();
 
