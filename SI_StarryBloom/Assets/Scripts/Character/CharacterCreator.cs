@@ -38,9 +38,9 @@ public class CharacterCreator : MonoBehaviour
         buildComplete?.Invoke();
     }
 
-    public GameObject WeaponCreation()
+    public WeaponController WeaponCreation()
     {
         var topKnight = tower.knights[tower.knights.Count - 1].knight;
-        return Instantiate(defaultWeaponPrefab, topKnight.transform.position + topKnight.transform.up * 1, Quaternion.identity);
+        return Instantiate(defaultWeaponPrefab, topKnight.transform.position + topKnight.transform.up * 1, Quaternion.identity).GetComponent<WeaponController>();
     }
 }

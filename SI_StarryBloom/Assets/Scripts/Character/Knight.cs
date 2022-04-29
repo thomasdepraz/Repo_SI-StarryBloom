@@ -27,6 +27,8 @@ public class Knight
     public GameObject dummyPrefab;
     public Rigidbody currentDummy;
 
+    public GameObject shieldPrefab;
+
     public Knight(GameObject knightObject)
     {
         rigidbody = knightObject.GetComponent<Rigidbody>();
@@ -98,6 +100,7 @@ public class Knight
         }
         else
         {
+            tower.player = player;
             transform.SetParent(player.transform);
         }
 
@@ -107,5 +110,19 @@ public class Knight
 
         var renderer2 = transform.gameObject.GetComponent<KnightObject>().rend2;
         renderer2.material = PlayersManager.Instance.knightSkinsScheme.GetSkin(player != null ? player.ID : "", healthState == HealthState.NAKED);
+    }
+
+    public void StartPanikIdle()
+    {
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        rigidbody.velocity = Vector3.zero;
+
+        //Intégré anim
+    }
+
+    public void EquipShield()
+    {
+
     }
 }

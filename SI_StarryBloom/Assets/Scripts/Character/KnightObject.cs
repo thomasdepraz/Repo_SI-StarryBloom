@@ -11,6 +11,11 @@ public class KnightObject : MonoBehaviour
     public Animator anim;
     public bool invincible = false;
 
+    [Header("Particles")]
+    public GameObject impactParticle;
+    public GameObject poofParticle;
+    public GameObject sweatParticle;
+
     public void Start()
     {
         if(knight.rigidbody == null)
@@ -19,7 +24,12 @@ public class KnightObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(knight.possessionState == Knight.PossessionState.POSSESSED && collision.gameObject.tag == "Knight")
+        if (knight.possessionState == Knight.PossessionState.NEUTRAL && collision.gameObject.tag == "Ground")
+        {
+            knight.StartPanikIdle();
+        }
+
+        if (knight.possessionState == Knight.PossessionState.POSSESSED && collision.gameObject.tag == "Knight")
         {
             if(knight.IsRoot())
             {
@@ -47,31 +57,37 @@ public class KnightObject : MonoBehaviour
         {
             if (knight.tower.knights.Count > 0 && !knight.IsRoot() && collision.gameObject.tag == "Weapon" && invincible == false)
             {
-                Debug.Log(collision.gameObject.name);
-                var tower = knight.tower;
-
-                Rigidbody weaponRigidbody = collision.gameObject.GetComponent<Rigidbody>();
-
-                /*ContactPoint[] contactPoints = collision.contacts;
-
-                Vector3 impulsePoint = contactPoints[0].point;
-
-                int w = 1;
-
-                for(int i = 0; i < contactPoints.Length; i++)
+                if (knight.tower.currentWeapon != collision.rigidbody.gameObject)
                 {
-                    impulsePoint = ((impulsePoint * w)  + contactPoints[i].point)/(w+1);
-                }*/
+                    Debug.Log(collision.gameObject.name);
+                    var tower = knight.tower;
 
-                Vector3 ejectForce = weaponRigidbody.velocity;
+                    Rigidbody weaponRigidbody = collision.gameObject.GetComponent<Rigidbody>();
 
-                ejectForce = new Vector3(ejectForce.x, 0f, ejectForce.z);
+                    /*ContactPoint[] contactPoints = collision.contacts;
 
-                tower.EjectKnights(this, ejectForce);
+                    Vector3 impulsePoint = contactPoints[0].point;
 
-                KnightObject rootKO = tower.root.transform.gameObject.GetComponent<KnightObject>();
+                    int w = 1;
 
-                rootKO.StartCoroutine(rootKO.InvincibilityFrame());
+                    for(int i = 0; i < contactPoints.Length; i++)
+                    {
+                        impulsePoint = ((impulsePoint * w)  + contactPoints[i].point)/(w+1);
+                    }*/
+
+                    //Impact particle
+                    Instantiate(impactParticle, collision.contacts[0].point, Quaternion.identity);
+
+                    Vector3 ejectForce = weaponRigidbody.velocity;
+
+                    ejectForce = new Vector3(ejectForce.x, 0f, ejectForce.z);
+
+                    tower.EjectKnights(this, ejectForce);
+
+                    KnightObject rootKO = tower.root.transform.gameObject.GetComponent<KnightObject>();
+
+                    rootKO.StartCoroutine(rootKO.InvincibilityFrame());
+                }
             }
         }
 
@@ -87,21 +103,21 @@ public class KnightObject : MonoBehaviour
 
         yield return new WaitForSeconds(0.02f);
 
-        for (int x = 0; x <3; x ++)
+        for (int x = 0; x <4; x ++)
         {
             for (int i = 0; i < knight.tower.knights.Count; i++)
             {
                 knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0.2f);
             }
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.15f);
 
             for (int i = 0; i < knight.tower.knights.Count; i++)
             {
                 knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0f);
             }
 
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.15f);
         }
 
         for (int i = 0; i < knight.tower.knights.Count; i++)
@@ -109,7 +125,7 @@ public class KnightObject : MonoBehaviour
             knight.tower.knights[i].rend.material.SetFloat("_HitColor", 0.2f);
         }
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.15f);
 
         for (int i = 0; i < knight.tower.knights.Count; i++)
         {
@@ -144,4 +160,42 @@ public class KnightObject : MonoBehaviour
         }
     }
 
+    public void SetHealthState(Knight.HealthState state)
+    {
+        knight.healthState = state;
+        switch (state)
+        {
+            case Knight.HealthState.ARMORED:
+
+                //deactivate rend
+                rend2.enabled = true;
+
+                //activate particle
+                sweatParticle.SetActive(false);
+                break;
+            case Knight.HealthState.NAKED:
+
+                //deactivate rend
+                rend2.enabled = false;
+
+                //activate particle
+                sweatParticle.SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public IEnumerator Destruction()
+    {
+        yield return new WaitForSeconds(0.02f);
+
+        rend.material.SetInteger("_Dead", 0);
+
+        rend.material.SetFloat("_HitColor", 0.2f);
+
+        yield return new WaitForSeconds(0.3f);
+
+        Destroy(gameObject);
+    }
 }

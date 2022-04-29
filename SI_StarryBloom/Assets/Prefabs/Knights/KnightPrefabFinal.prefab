@@ -531,7 +531,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 947245fa832b2da478a3d0c13c32e261, type: 2}
+  - {fileID: 2100000, guid: f42e7c6a8058ae54b80af662a693741b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -975,6 +975,7 @@ Transform:
   - {fileID: 4847032982505566418}
   - {fileID: 94729330125065682}
   - {fileID: 6247031884997209721}
+  - {fileID: 8992042988079964719}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1029,35 +1030,43 @@ MonoBehaviour:
                     transform: {fileID: 0}
                     dummyPrefab: {fileID: 0}
                     currentDummy: {fileID: 0}
+                    shieldPrefab: {fileID: 0}
                   currentWeapon: {fileID: 0}
                 rigidbody: {fileID: 0}
                 joint: {fileID: 0}
                 transform: {fileID: 0}
                 dummyPrefab: {fileID: 0}
                 currentDummy: {fileID: 0}
+                shieldPrefab: {fileID: 0}
               currentWeapon: {fileID: 0}
             rigidbody: {fileID: 0}
             joint: {fileID: 0}
             transform: {fileID: 0}
             dummyPrefab: {fileID: 0}
             currentDummy: {fileID: 0}
+            shieldPrefab: {fileID: 0}
           currentWeapon: {fileID: 0}
         rigidbody: {fileID: 0}
         joint: {fileID: 0}
         transform: {fileID: 0}
         dummyPrefab: {fileID: 0}
         currentDummy: {fileID: 0}
+        shieldPrefab: {fileID: 0}
       currentWeapon: {fileID: 0}
     rigidbody: {fileID: 0}
     joint: {fileID: 0}
     transform: {fileID: 0}
     dummyPrefab: {fileID: 3304502570862021746, guid: 10ddfbd13d1e6774ca10f8207fbff2bd, type: 3}
     currentDummy: {fileID: 0}
+    shieldPrefab: {fileID: 0}
   col: {fileID: 5078970468250625888}
   rend: {fileID: 7990405836244860261}
   rend2: {fileID: 7990405836244860261}
   anim: {fileID: 5560111245312917295}
   invincible: 0
+  impactParticle: {fileID: 5969730089416553710, guid: ae9d2f4472fb2574cb97e150092e308f, type: 3}
+  poofParticle: {fileID: 6960990105870421648, guid: a63b090271f2fe14186002344889c771, type: 3}
+  sweatParticle: {fileID: 8992042988079964714}
 --- !u!54 &5078970468250625894
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1675,7 +1684,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 947245fa832b2da478a3d0c13c32e261, type: 2}
+  - {fileID: 2100000, guid: f42e7c6a8058ae54b80af662a693741b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1760,3 +1769,74 @@ Transform:
   m_Father: {fileID: 6247031884997209721}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -3.517, y: 0.792, z: -55.6}
+--- !u!1001 &1250945607073053964
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5564179848940191195}
+    m_Modifications:
+    - target: {fileID: 7896612325583544099, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896612325583544099, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896612325583544099, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.967
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896612325583544099, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896612325583544099, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896612325583544099, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896612325583544099, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896612325583544099, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896612325583544099, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896612325583544099, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896612325583544099, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896612325583544102, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_Name
+      value: Partcile_Sweat
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896612325583544102, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+--- !u!1 &8992042988079964714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7896612325583544102, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+  m_PrefabInstance: {fileID: 1250945607073053964}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8992042988079964719 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7896612325583544099, guid: b50283ea38aeae648aab32fcfd194fa4, type: 3}
+  m_PrefabInstance: {fileID: 1250945607073053964}
+  m_PrefabAsset: {fileID: 0}
