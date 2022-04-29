@@ -696,7 +696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3938421480585467316, guid: 7753770c696d4d14797b0b879345508a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3938421480585467317, guid: 7753770c696d4d14797b0b879345508a, type: 3}
       propertyPath: m_Pivot.x
@@ -1140,6 +1140,7 @@ GameObject:
   - component: {fileID: 1600960271}
   - component: {fileID: 1600960273}
   - component: {fileID: 1600960272}
+  - component: {fileID: 1600960274}
   m_Layer: 5
   m_Name: InfoMessage
   m_TagString: Untagged
@@ -1263,6 +1264,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600960270}
   m_CullTransparentMesh: 1
+--- !u!95 &1600960274
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600960270}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c9baec4573f66348bbabe2652f5e0f3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1719781657
 GameObject:
   m_ObjectHideFlags: 0
