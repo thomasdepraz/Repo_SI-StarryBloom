@@ -117,6 +117,8 @@ public class KnightTower
     public void AttachWeapon(WeaponController weapon)
     {
         var topKnight = knights[knights.Count - 1].knight;
+        Debug.Log(weapon);
+        Debug.Log(topKnight);
         weapon.transform.position = topKnight.transform.position + topKnight.transform.up * 1; //FIX MAGIC NUMBER
         weapon.transform.rotation = topKnight.transform.rotation;
         currentWeapon = weapon;

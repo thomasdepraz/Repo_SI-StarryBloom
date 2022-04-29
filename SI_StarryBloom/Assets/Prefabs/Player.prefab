@@ -85,30 +85,35 @@ MonoBehaviour:
                       transform: {fileID: 0}
                       dummyPrefab: {fileID: 0}
                       currentDummy: {fileID: 0}
+                      shieldPrefab: {fileID: 0}
                     currentWeapon: {fileID: 0}
                   rigidbody: {fileID: 0}
                   joint: {fileID: 0}
                   transform: {fileID: 0}
                   dummyPrefab: {fileID: 0}
                   currentDummy: {fileID: 0}
+                  shieldPrefab: {fileID: 0}
                 currentWeapon: {fileID: 0}
               rigidbody: {fileID: 0}
               joint: {fileID: 0}
               transform: {fileID: 0}
               dummyPrefab: {fileID: 0}
               currentDummy: {fileID: 0}
+              shieldPrefab: {fileID: 0}
             currentWeapon: {fileID: 0}
           rigidbody: {fileID: 0}
           joint: {fileID: 0}
           transform: {fileID: 0}
           dummyPrefab: {fileID: 0}
           currentDummy: {fileID: 0}
+          shieldPrefab: {fileID: 0}
         currentWeapon: {fileID: 0}
       rigidbody: {fileID: 0}
       joint: {fileID: 0}
       transform: {fileID: 0}
       dummyPrefab: {fileID: 0}
       currentDummy: {fileID: 0}
+      shieldPrefab: {fileID: 0}
     currentWeapon: {fileID: 0}
 --- !u!114 &2522341802301047109
 MonoBehaviour:
@@ -124,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knightPrefab: {fileID: 5078970468250625889, guid: ef05d8584cc3a9e45beb4639a95964e2, type: 3}
   dummyPrefab: {fileID: 3304502570862021746, guid: 10ddfbd13d1e6774ca10f8207fbff2bd, type: 3}
-  defaultWeaponPrefab: {fileID: 8080562028992447010, guid: fb33a241d64965f4abc2303cf27bde04, type: 3}
+  defaultWeaponPrefab: {fileID: 3445810123865562453, guid: 34a6225ef685795408620eb2a30f6093, type: 3}
   knightCount: 5
   knightHeight: 1
   startingPos: {x: 0, y: 0, z: 0}
@@ -163,30 +168,35 @@ MonoBehaviour:
                       transform: {fileID: 0}
                       dummyPrefab: {fileID: 0}
                       currentDummy: {fileID: 0}
+                      shieldPrefab: {fileID: 0}
                     currentWeapon: {fileID: 0}
                   rigidbody: {fileID: 0}
                   joint: {fileID: 0}
                   transform: {fileID: 0}
                   dummyPrefab: {fileID: 0}
                   currentDummy: {fileID: 0}
+                  shieldPrefab: {fileID: 0}
                 currentWeapon: {fileID: 0}
               rigidbody: {fileID: 0}
               joint: {fileID: 0}
               transform: {fileID: 0}
               dummyPrefab: {fileID: 0}
               currentDummy: {fileID: 0}
+              shieldPrefab: {fileID: 0}
             currentWeapon: {fileID: 0}
           rigidbody: {fileID: 0}
           joint: {fileID: 0}
           transform: {fileID: 0}
           dummyPrefab: {fileID: 0}
           currentDummy: {fileID: 0}
+          shieldPrefab: {fileID: 0}
         currentWeapon: {fileID: 0}
       rigidbody: {fileID: 0}
       joint: {fileID: 0}
       transform: {fileID: 0}
       dummyPrefab: {fileID: 0}
       currentDummy: {fileID: 0}
+      shieldPrefab: {fileID: 0}
     currentWeapon: {fileID: 0}
 --- !u!114 &2522341802301047112
 MonoBehaviour:
@@ -235,34 +245,39 @@ MonoBehaviour:
                       transform: {fileID: 0}
                       dummyPrefab: {fileID: 0}
                       currentDummy: {fileID: 0}
+                      shieldPrefab: {fileID: 0}
                     currentWeapon: {fileID: 0}
                   rigidbody: {fileID: 0}
                   joint: {fileID: 0}
                   transform: {fileID: 0}
                   dummyPrefab: {fileID: 0}
                   currentDummy: {fileID: 0}
+                  shieldPrefab: {fileID: 0}
                 currentWeapon: {fileID: 0}
               rigidbody: {fileID: 0}
               joint: {fileID: 0}
               transform: {fileID: 0}
               dummyPrefab: {fileID: 0}
               currentDummy: {fileID: 0}
+              shieldPrefab: {fileID: 0}
             currentWeapon: {fileID: 0}
           rigidbody: {fileID: 0}
           joint: {fileID: 0}
           transform: {fileID: 0}
           dummyPrefab: {fileID: 0}
           currentDummy: {fileID: 0}
+          shieldPrefab: {fileID: 0}
         currentWeapon: {fileID: 0}
       rigidbody: {fileID: 0}
       joint: {fileID: 0}
       transform: {fileID: 0}
       dummyPrefab: {fileID: 0}
       currentDummy: {fileID: 0}
+      shieldPrefab: {fileID: 0}
     currentWeapon: {fileID: 0}
   controllerData: {fileID: 11400000, guid: 199c9c57390393044992a4030d2afbc0, type: 2}
   playerHeight: 1
-  PickUp: {fileID: 0}
+  pickupInRange: {fileID: 0}
 --- !u!114 &2522341802301047111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,18 +368,6 @@ MonoBehaviour:
     m_ActionId: 42bf4b9d-0958-4f7c-9e72-20ac24c80240
     m_ActionName: Player/Throw[/XInputControllerWindows/buttonNorth,/XInputControllerWindows/rightShoulder]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8211b069-b192-4eee-8798-a2fa3ac4f07b
-    m_ActionName: UIPlayer/SwapCharacter[/XInputControllerWindows/rightTrigger,/XInputControllerWindows/leftTrigger]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 48a166ec-fab5-41bc-9e04-a3a3fd02f3bc
-    m_ActionName: UIPlayer/Validate[/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth,/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9ce8d9b7-aa98-408b-9baa-066fd3a9a0c8
-    m_ActionName: UIPlayer/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2522341802301047112}
         m_TargetAssemblyTypeName: Controller, Assembly-CSharp
@@ -380,6 +383,46 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6aef35e8-de42-4a41-9615-5831c595d4ff
     m_ActionName: Player/Pickup
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 77eaf663-ee06-4081-b597-a93128a1e8c6
+    m_ActionName: UIPlayer/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dca8679c-9b69-4755-895d-58a79660eb57
+    m_ActionName: UIPlayer/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bebf3c75-f75c-403b-8daa-61bc45eca755
+    m_ActionName: UIPlayer/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0917d8e1-8dd9-44e8-b9b9-401885bb3aeb
+    m_ActionName: UIPlayer/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3252feac-95d5-472b-8782-cadace5e06f2
+    m_ActionName: UIPlayer/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7e2bd75e-1624-4e76-94e5-5f8f7ebbb4c9
+    m_ActionName: UIPlayer/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0acaf37d-fd63-4578-9147-79d8d098d462
+    m_ActionName: UIPlayer/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0e912e13-b455-43ec-8d5d-ebc1ef8b64ab
+    m_ActionName: UIPlayer/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b1971a7a-f7d7-45bb-ac9f-15a08ae59dbc
+    m_ActionName: UIPlayer/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 09766eec-46c7-46ce-b33d-4007060fe683
+    m_ActionName: UIPlayer/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
