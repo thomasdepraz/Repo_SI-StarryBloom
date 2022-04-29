@@ -112,7 +112,7 @@ public class KnightTower
     {
         knights[knights.Count - 1].knight.DeleteJoint();
 
-        //ChangeWeaponTag("PickUpWeapon");
+        ChangeWeaponTag("PickUpWeapon");
 
         if(currentWeapon != null)
         currentWeapon.myTower = null;
