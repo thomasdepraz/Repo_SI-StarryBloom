@@ -113,6 +113,9 @@ public class Controller : MonoBehaviour
             if (isGrounded())
             {
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+                //Sound
+                SoundManager.Instance.PlaySound("SFX_Jump", false);
             }
         }
     }

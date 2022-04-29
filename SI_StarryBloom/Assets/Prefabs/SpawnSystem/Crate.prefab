@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9189099130632151239}
   - component: {fileID: 9206234024522098075}
   - component: {fileID: 7363722570117397813}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,8 +99,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnItems:
   - {fileID: 5078970468250625889, guid: ef05d8584cc3a9e45beb4639a95964e2, type: 3}
-  - {fileID: 8080562028992447010, guid: 40e68610cd00d724eb03ffbde2655e7c, type: 3}
+  - {fileID: 3445810123865562453, guid: 34a6225ef685795408620eb2a30f6093, type: 3}
+  - {fileID: 4516718822287320892, guid: f41190aaf586d594d98f92b12a2b1e48, type: 3}
+  - {fileID: 4257847942130265613, guid: dae29802f99003d4887ce662839aff45, type: 3}
   particle: {fileID: 5276356293130684463, guid: b44a08e7224066747b5e682e8a99bd11, type: 3}
+  dummyPrefab: {fileID: 3304502570862021746, guid: 10ddfbd13d1e6774ca10f8207fbff2bd, type: 3}
 --- !u!65 &9206234024522098075
 BoxCollider:
   m_ObjectHideFlags: 0

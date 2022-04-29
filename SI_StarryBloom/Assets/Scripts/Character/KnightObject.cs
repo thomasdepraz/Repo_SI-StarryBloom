@@ -35,7 +35,7 @@ public class KnightObject : MonoBehaviour
             {
                 var player = transform.parent.gameObject.GetComponent<Player>();
 
-                if (player.controller.isGrounded())
+                //if (!player.controller.isGrounded())
                 {
                     KnightObject k = collision.gameObject.GetComponent<KnightObject>();
 
@@ -77,6 +77,9 @@ public class KnightObject : MonoBehaviour
 
                     //Impact particle
                     Instantiate(impactParticle, collision.contacts[0].point, Quaternion.identity);
+
+                    //Sound
+                    SoundManager.Instance.PlaySound("SFX_SwordAttack3", false);
 
                     Vector3 ejectForce = weaponRigidbody.velocity;
 
@@ -193,6 +196,9 @@ public class KnightObject : MonoBehaviour
         rend.material.SetInteger("_Dead", 0);
 
         rend.material.SetFloat("_HitColor", 0.2f);
+
+        //Sound
+        SoundManager.Instance.PlaySound("SFX_DeathKnight", false);
 
         yield return new WaitForSeconds(0.3f);
 
