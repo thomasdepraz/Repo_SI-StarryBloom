@@ -542,11 +542,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1933966256322207175, guid: 3c747a0bda88c5747b32d9eb8532d5a6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000022474326
+      value: -0.00000002195782
       objectReference: {fileID: 0}
     - target: {fileID: 1933966256322207175, guid: 3c747a0bda88c5747b32d9eb8532d5a6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000000930917
+      value: 0.000000009095226
       objectReference: {fileID: 0}
     - target: {fileID: 1933966256322207175, guid: 3c747a0bda88c5747b32d9eb8532d5a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -700,15 +700,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8222735291259903096, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000022474326
+      value: -0.00000002195782
       objectReference: {fileID: 0}
     - target: {fileID: 8222735291259903096, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000000930917
-      objectReference: {fileID: 0}
-    - target: {fileID: 8453084477570761847, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}
-      propertyPath: maxThrowStrength
-      value: 160
+      value: 0.000000009095226
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e21064df258be714e8f656e36e7a6fcc, type: 3}

@@ -9,17 +9,23 @@ public class LevelManager : MonoBehaviour
     public List<Transform> startingPositions = new List<Transform>();
 
     [Header("Instantiated Objects Parent")]
-    public Transform objectsParent;
+    public Transform weaponsParent;
+    public Transform knightsParent;
 
     internal void ClearArena()
     {
         List<GameObject> objects = new List<GameObject>();
-        foreach(Transform child in objectsParent)
+        foreach(Transform child in weaponsParent)
         {
             objects.Add(child.gameObject);
         }
 
-        while(objects.Count > 0)//particles here
+        foreach (Transform child in knightsParent)
+        {
+            objects.Add(child.gameObject);
+        }
+
+        while (objects.Count > 0)//particles here
         {
             Destroy(objects[0]);
             objects.RemoveAt(0);

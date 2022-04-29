@@ -30,7 +30,14 @@ public class Crate : MonoBehaviour
             ko.knight = knight;
 
             ko.knight.dummyPrefab = dummyPrefab;
+
+            go.transform.SetParent(GameManager.Instance.levelManager.knightsParent);
         }
+        else
+        {
+            go.transform.SetParent(GameManager.Instance.levelManager.weaponsParent);
+        }
+        
         Instantiate(particle,transform.position, Quaternion.identity);
         Destroy(gameObject);
 

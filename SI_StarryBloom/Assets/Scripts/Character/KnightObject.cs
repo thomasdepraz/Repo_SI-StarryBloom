@@ -11,6 +11,8 @@ public class KnightObject : MonoBehaviour
     public Animator anim;
     public bool invincible = false;
 
+    public ConfigurableJoint joint;
+
     [Header("Particles")]
     public GameObject impactParticle;
     public GameObject poofParticle;

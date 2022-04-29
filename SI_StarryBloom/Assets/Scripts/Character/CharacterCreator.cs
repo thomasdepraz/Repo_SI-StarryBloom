@@ -35,6 +35,8 @@ public class CharacterCreator : MonoBehaviour
         var weapon = WeaponCreation();
         tower.AttachWeapon(weapon);
 
+        weapon.transform.SetParent(GameManager.Instance.levelManager.weaponsParent);
+
         buildComplete?.Invoke();
     }
 
