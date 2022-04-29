@@ -90,6 +90,7 @@ public class GameManager : Singleton<GameManager>
 
         //Reload arena (clean, stop throwers...)
         levelManager.ClearArena();
+        Arch.Instance.HideArks();
 
         //stop throwers
         spawner.Stop();
@@ -97,6 +98,9 @@ public class GameManager : Singleton<GameManager>
         //Hide inGameUI
         timer.timerUI.SetActive(false);
         playerUI.HideUI();
+
+        TimerDraw.doOnce = false;
+        TimerDraw.doOnceOther = false;
 
         //set player controller map
         players[0].input.SwitchCurrentActionMap("UIPlayer");
