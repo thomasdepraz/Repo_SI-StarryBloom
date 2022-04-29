@@ -150,16 +150,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 272627131}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_ActionsAsset: {fileID: -944628639613478452, guid: aff22e2adb014c142b5fc78f3b47a523, type: 3}
+  m_PointAction: {fileID: -956218869515158683, guid: aff22e2adb014c142b5fc78f3b47a523, type: 3}
+  m_MoveAction: {fileID: 5488118832056877291, guid: aff22e2adb014c142b5fc78f3b47a523, type: 3}
+  m_SubmitAction: {fileID: -5679817510707600609, guid: aff22e2adb014c142b5fc78f3b47a523, type: 3}
+  m_CancelAction: {fileID: 1121794838774930016, guid: aff22e2adb014c142b5fc78f3b47a523, type: 3}
+  m_LeftClickAction: {fileID: 2236087926447420470, guid: aff22e2adb014c142b5fc78f3b47a523, type: 3}
+  m_MiddleClickAction: {fileID: -552644458718858650, guid: aff22e2adb014c142b5fc78f3b47a523, type: 3}
+  m_RightClickAction: {fileID: 6516922911637153893, guid: aff22e2adb014c142b5fc78f3b47a523, type: 3}
+  m_ScrollWheelAction: {fileID: -923530830454857266, guid: aff22e2adb014c142b5fc78f3b47a523, type: 3}
+  m_TrackedDevicePositionAction: {fileID: -137207715123337214, guid: aff22e2adb014c142b5fc78f3b47a523, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 6423562911783365225, guid: aff22e2adb014c142b5fc78f3b47a523, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!114 &272627133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1780900295}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &272627134
@@ -493,7 +501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3938421480585467307, guid: 7753770c696d4d14797b0b879345508a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3938421480585467307, guid: 7753770c696d4d14797b0b879345508a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -691,6 +699,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1780900295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3938421480585467316, guid: 7753770c696d4d14797b0b879345508a, type: 3}
+  m_PrefabInstance: {fileID: 1609555888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2049327150
 GameObject:
   m_ObjectHideFlags: 0
