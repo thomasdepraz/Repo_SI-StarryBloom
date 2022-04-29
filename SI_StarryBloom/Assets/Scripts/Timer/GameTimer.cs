@@ -30,6 +30,7 @@ public class GameTimer : MonoBehaviour
             yield return null;
         }
         TimeLeft = 0.0f;
+        SoundManager.Instance.PlaySound("SFX_Finish", false);
         onTimerEnd?.Invoke();
     }
 

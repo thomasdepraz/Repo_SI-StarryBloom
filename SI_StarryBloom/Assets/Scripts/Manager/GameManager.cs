@@ -13,6 +13,7 @@ public class GameManager : Singleton<GameManager>
     public CameraManager cameraManager;
     public ItemSpawn spawner;
     public VictoryScript victoryScreen;
+    public AudioSource musicSource;
     
     public bool useTimer;
 
@@ -22,19 +23,24 @@ public class GameManager : Singleton<GameManager>
         CreateSingleton(false);
     }
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
         //Get PlayersManager
         playersManager = PlayersManager.Instance;
 
         if(playersManager.players.Count>0)
+        {
+            yield return new WaitForSeconds(2.7f);
             StartGame();
+        }
 
     }
 
     [ContextMenu("StartGame")]
     public void StartGame()
     {
+        musicSource.Play();
+
         //Appear players
         playersManager.SpawnPlayers();
 
@@ -61,6 +67,8 @@ public class GameManager : Singleton<GameManager>
 
     public void EndGame()
     {
+        musicSource.Stop();
+
         //Get order
         var players = playersManager.players;
 
