@@ -30,5 +30,10 @@ namespace Menu
         {
             SceneManager.LoadScene(sceneName);
         }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }
