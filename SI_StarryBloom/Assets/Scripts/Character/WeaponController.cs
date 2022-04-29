@@ -10,6 +10,8 @@ public class WeaponController : MonoBehaviour
 
     float baseAngularDrag = 0f;
 
+    public KnightTower myTower;
+
     private void Start()
     {
         baseAngularDrag = rb.angularDrag;
@@ -43,5 +45,15 @@ public class WeaponController : MonoBehaviour
         rb.angularDrag = baseAngularDrag;
 
         rb.useGravity = true;
+
+        DestroyWeapon();
+    }
+
+    public void DestroyWeapon()
+    {
+        if(myTower != null)
+            myTower.DetachWeapon();
+
+        Destroy(gameObject);
     }
 }

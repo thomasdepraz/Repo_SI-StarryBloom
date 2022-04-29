@@ -24,8 +24,9 @@ public class ItemSpawn : MonoBehaviour
 
     private void Spawn()
     {
+        var target = spawnTarget.transform.position + new Vector3(Random.Range(-5f, 5f), 0f, Random.Range(-5f,5f));
         var clone = Instantiate(spawnedCrate, spawnPoints[Random.Range(0, spawnPoints.Count)].transform.position, spawnPoints[Random.Range(0, spawnPoints.Count)].transform.rotation);
-        clone.GetComponent<Rigidbody>().AddForce((spawnTarget.transform.position - clone.transform.position) * Random.Range(minThrowStrength, maxThrowStrength));
+        clone.GetComponent<Rigidbody>().AddForce( (target - clone.transform.position) * Random.Range(minThrowStrength, maxThrowStrength) );
         spawnRoutine = StartCoroutine(SpawnTimer());
     }
 

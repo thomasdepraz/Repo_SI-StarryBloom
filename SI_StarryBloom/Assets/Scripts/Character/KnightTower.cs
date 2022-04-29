@@ -112,7 +112,10 @@ public class KnightTower
     {
         knights[knights.Count - 1].knight.DeleteJoint();
 
-        //ChangeWeaponTag("PickUpWeapon");
+        ChangeWeaponTag("PickUpWeapon");
+
+        if(currentWeapon != null)
+        currentWeapon.myTower = null;
 
         currentWeapon = null;
     }
@@ -127,6 +130,7 @@ public class KnightTower
         currentWeapon = weapon;
         ChangeWeaponTag("Weapon");
         topKnight.SetJoint(weapon.gameObject);
+        weapon.myTower = this;
 
         //Sound
         SoundManager.Instance.PlaySound("SFX_NewSword", false);
@@ -177,6 +181,13 @@ public class KnightTower
 
         //Sound
         SoundManager.Instance.PlaySound("SFX_NewKnight", false);
+
+        //Victory
+        if(knights.Count == GameManager.Instance.heightObjective)
+        {
+            GameManager.Instance.EndGame();
+        }
+
     }
 
     public void ChangeWeaponTag(string newTag)
