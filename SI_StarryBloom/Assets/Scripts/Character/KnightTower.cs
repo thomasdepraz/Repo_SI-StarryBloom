@@ -137,7 +137,7 @@ public class KnightTower
         var topKnight = knights[knights.Count - 1].knight;
         var weaponRb = topKnight.joint.connectedBody;
         var cWeapon = currentWeapon;
-        if(weaponRb!=null)
+        if(cWeapon!=null)
         {
             player.StartCoroutine(player.RotateRigibody(weaponRb, currentWeapon));
 
