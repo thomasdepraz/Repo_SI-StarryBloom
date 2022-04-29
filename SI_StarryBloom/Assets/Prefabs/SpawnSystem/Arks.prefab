@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1261159820221345433}
+  - component: {fileID: 1333430155}
   m_Layer: 0
   m_Name: Arks
   m_TagString: Untagged
@@ -35,6 +36,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1333430155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261159820221345438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8e01104070bfa41abadc2aee25aea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  archs:
+  - {fileID: 2108216777261532183}
+  - {fileID: 924711673146623666}
+  - {fileID: 924711674404310776}
+  - {fileID: 924711673342161626}
+  - {fileID: 924711673502980428}
 --- !u!1001 &5723575146710957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52,7 +71,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
       propertyPath: m_LocalPosition.z
@@ -90,8 +109,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ark
       objectReference: {fileID: 0}
+    - target: {fileID: 2113796203434361786, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+--- !u!1 &2108216777261532183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2113796203434361786, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+  m_PrefabInstance: {fileID: 5723575146710957}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1588138244481031853 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
@@ -114,7 +142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
       propertyPath: m_LocalPosition.z
@@ -152,8 +180,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ark (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2113796203434361786, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+--- !u!1 &924711673342161626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2113796203434361786, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+  m_PrefabInstance: {fileID: 1261159819401834848}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &549136730918692960 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
@@ -176,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
       propertyPath: m_LocalPosition.z
@@ -214,8 +251,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ark (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2113796203434361786, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+--- !u!1 &924711673146623666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2113796203434361786, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+  m_PrefabInstance: {fileID: 1261159819743167752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &549136731249548296 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
@@ -238,7 +284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
       propertyPath: m_LocalPosition.z
@@ -276,8 +322,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ark (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2113796203434361786, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+--- !u!1 &924711673502980428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2113796203434361786, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+  m_PrefabInstance: {fileID: 1261159820393388790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &549136731807220726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
@@ -300,7 +355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
       propertyPath: m_LocalPosition.z
@@ -338,8 +393,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ark (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2113796203434361786, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+--- !u!1 &924711674404310776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2113796203434361786, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}
+  m_PrefabInstance: {fileID: 1261159820497571138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &549136731970393154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1593824421870967040, guid: 37888296e33b3d1468dcf8dab519b238, type: 3}

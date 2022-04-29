@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b223a324637033b4ba573b42bc799b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDuration: 60
+  gameDuration: 120
   <TimeLeft>k__BackingField: 0
   onTimerEnd:
     m_PersistentCalls:

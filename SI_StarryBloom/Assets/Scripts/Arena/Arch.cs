@@ -2,34 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arch : MonoBehaviour
+public class Arch : Singleton<Arch>
 {
-
-    public List<GameObject> archs;
-    public float timer;
-    private bool archSpawned;
-
-
-    void Start()
+    public void Awake()
     {
-        archSpawned = false;     
+        CreateSingleton(false);
     }
 
-    
-    void Update()
+    public List<GameObject> archs = new List<GameObject>();
+
+    public void HideArks()
     {
-        timer -= Time.deltaTime;
-
-        if(timer <= 0 && archSpawned == false)
-        {            
-            int i = Random.Range(0, archs.Count - 1);
-            archs[i].SetActive(true);
-            archs.RemoveAt(i);
-
-            int j = Random.Range(0, archs.Count - 1);
-            archs[j].SetActive(true);            
-
-            archSpawned = true;
+        foreach(var ark in archs)
+        {
+            ark.SetActive(false);
+            archs.Add(ark);
         }
-    }     
+    }
+
+    public void AppearArks()
+    {
+        int r = Random.Range(0, archs.Count-1);
+        AppearObject(archs[r]);
+
+        int otherR = r;
+        while (otherR == r)
+        {
+            otherR = Random.Range(0, archs.Count - 1);
+        }
+        AppearObject(archs[otherR]);
+    }
+
+    public void AppearObject(GameObject obj)
+    {
+        obj.transform.position += Vector3.down * 8;
+        obj.SetActive(true);
+
+        LeanTween.moveY(obj, 0, 2).setOnComplete(()=> Debug.Log(""));
+    }
 }
