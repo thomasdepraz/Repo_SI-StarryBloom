@@ -7,6 +7,8 @@ public class Crate : MonoBehaviour
     public List<GameObject> spawnItems;
     public GameObject particle;
 
+    public GameObject dummyPrefab;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Floor")
@@ -20,7 +22,11 @@ public class Crate : MonoBehaviour
         GameObject go = Instantiate(spawnItems[Random.Range(0, spawnItems.Count)], transform.position, transform.rotation);
         if(go.tag == "Knight")
         {
-            go.GetComponent<KnightObject>().SetAnimState(KnightObject.AnimState.PANIC);
+            KnightObject ko = go.GetComponent<KnightObject>();
+
+            ko.SetAnimState(KnightObject.AnimState.PANIC);
+
+            ko.knight.dummyPrefab = dummyPrefab;
         }
         Instantiate(particle,transform.position, Quaternion.identity);
         Destroy(gameObject);

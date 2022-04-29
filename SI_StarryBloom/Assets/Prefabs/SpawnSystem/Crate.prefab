@@ -103,6 +103,7 @@ MonoBehaviour:
   - {fileID: 4516718822287320892, guid: f41190aaf586d594d98f92b12a2b1e48, type: 3}
   - {fileID: 5036153831988321001, guid: e65e5da752dd248418e028b3fc3335e7, type: 3}
   particle: {fileID: 5276356293130684463, guid: b44a08e7224066747b5e682e8a99bd11, type: 3}
+  dummyPrefab: {fileID: 3304502570862021746, guid: 10ddfbd13d1e6774ca10f8207fbff2bd, type: 3}
 --- !u!65 &9206234024522098075
 BoxCollider:
   m_ObjectHideFlags: 0
