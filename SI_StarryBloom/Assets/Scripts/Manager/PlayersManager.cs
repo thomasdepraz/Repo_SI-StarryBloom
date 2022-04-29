@@ -9,6 +9,7 @@ public class PlayersManager : Singleton<PlayersManager>
     public PlayerInputManager inputManager;
     public List<Player> players = new List<Player>();
 
+    public LevelManager levelManager;
     public List<Vector3> startingPos = new List<Vector3>();
 
     public PlayerSkins knightSkinsScheme;
@@ -66,10 +67,22 @@ public class PlayersManager : Singleton<PlayersManager>
     [ContextMenu("SpawnPlayers")]
     public void SpawnPlayers()
     {
-        for (int i = 0; i < players.Count; i++)
+        if(levelManager != null)
         {
-            players[i].AppearPlayer(startingPos[i]);
+            for (int i = 0; i < players.Count; i++)
+            {
+                players[i].AppearPlayer(levelManager.startingPositions[i].position);
+            }
         }
+        else
+        {
+            for (int i = 0; i < players.Count; i++)
+            {
+                players[i].AppearPlayer(startingPos[i]);
+            }
+        }
+
+        
     }
 
 }
