@@ -1061,7 +1061,7 @@ MonoBehaviour:
     shieldPrefab: {fileID: 0}
   col: {fileID: 5078970468250625888}
   rend: {fileID: 7990405836244860261}
-  rend2: {fileID: 7990405836244860261}
+  rend2: {fileID: 7325187397192087112}
   anim: {fileID: 5560111245312917295}
   invincible: 0
   impactParticle: {fileID: 5969730089416553710, guid: ae9d2f4472fb2574cb97e150092e308f, type: 3}

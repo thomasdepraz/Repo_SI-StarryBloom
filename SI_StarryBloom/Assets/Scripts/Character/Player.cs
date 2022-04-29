@@ -71,6 +71,8 @@ public class Player : MonoBehaviour, IComparable
 
         Player otherPlayer = other as Player;
 
-        return tower.knights.Count.CompareTo(otherPlayer.tower.knights.Count);
+        var result = otherPlayer.tower.knights.Count.CompareTo(tower.knights.Count);
+
+        return result ;
     }
 }
