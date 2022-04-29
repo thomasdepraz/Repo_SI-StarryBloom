@@ -120,7 +120,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - ColorAdd: {r: 0, g: 0, b: 0, a: 0}
-    - FresnelColor: {r: 1, g: 1, b: 1, a: 0}
+    - FresnelColor: {r: 0.6132076, g: 0.2022373, b: 0, a: 0}
     - Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
