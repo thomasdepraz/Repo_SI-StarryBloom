@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 3092320757400704737}
   - component: {fileID: 2244513335821260312}
   - component: {fileID: 5790435916483628733}
+  - component: {fileID: -7742476181370179038}
+  - component: {fileID: -7964156149402056508}
   m_Layer: 0
   m_Name: Weapon_Shield
-  m_TagString: Untagged
+  m_TagString: PickUpWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,3 +128,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6646231, y: 0.9995073, z: 0.14795676}
   m_Center: {x: 0, y: -0.00008033216, z: 0.04089898}
+--- !u!114 &-7742476181370179038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036153831988321001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5553eab05bc67ba47ad5deaf33d9c568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 3092320757400704737}
+--- !u!135 &-7964156149402056508
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036153831988321001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.75
+  m_Center: {x: 0, y: 0, z: 0}

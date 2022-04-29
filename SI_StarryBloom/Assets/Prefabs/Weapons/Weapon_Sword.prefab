@@ -94,9 +94,11 @@ GameObject:
   - component: {fileID: 3256849949003324318}
   - component: {fileID: 6450404821044977038}
   - component: {fileID: 8642081401131268407}
+  - component: {fileID: -7727577356051676300}
+  - component: {fileID: 2569653145321624222}
   m_Layer: 0
   m_Name: Weapon_Sword
-  m_TagString: Untagged
+  m_TagString: PickUpWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,6 +163,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0894be50f0fc4b44bcbe884a0b72f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7727577356051676300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445810123865562453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5553eab05bc67ba47ad5deaf33d9c568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 6450404821044977038}
+--- !u!135 &2569653145321624222
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445810123865562453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0.75}
 --- !u!1 &4242215728070329064
 GameObject:
   m_ObjectHideFlags: 0
