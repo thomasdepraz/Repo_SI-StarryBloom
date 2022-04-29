@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class VictoryScript : MonoBehaviour
 {
     public GameObject screen;
-    public GameObject invisibleButton;
+    public GameObject restartButton;
 
     public Sprite sunSprite;
     public Sprite moonSprite;
@@ -16,11 +16,15 @@ public class VictoryScript : MonoBehaviour
 
     public List<Image> heads = new List<Image>();
 
+    public void Start()
+    {
+        EventSystem.current.firstSelectedGameObject = restartButton;
+    }
+
     public void SetupScreen(List<Player> players)
     {
         screen.SetActive(true);
 
-        EventSystem.current.firstSelectedGameObject = invisibleButton;
 
         for (int i = 0; i < players.Count; i++)
         {

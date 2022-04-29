@@ -635,7 +635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screen: {fileID: 2759871022092340989}
-  invisibleButton: {fileID: 0}
+  restartButton: {fileID: 5199012112269394568}
   sunSprite: {fileID: -9157988197793588470, guid: 8af80b68b60a5254685aa880b8c0495e, type: 3}
   moonSprite: {fileID: 5163858728750016962, guid: 8af80b68b60a5254685aa880b8c0495e, type: 3}
   crossSprite: {fileID: -1307314668404636038, guid: 8af80b68b60a5254685aa880b8c0495e, type: 3}
@@ -2350,6 +2350,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7753770c696d4d14797b0b879345508a, type: 3}
+--- !u!1 &5199012112269394568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3938421480585467316, guid: 7753770c696d4d14797b0b879345508a, type: 3}
+  m_PrefabInstance: {fileID: 9119380777809073980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5199012112269394569 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3938421480585467317, guid: 7753770c696d4d14797b0b879345508a, type: 3}
