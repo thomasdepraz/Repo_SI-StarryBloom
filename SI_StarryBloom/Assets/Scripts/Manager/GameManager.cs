@@ -17,6 +17,8 @@ public class GameManager : Singleton<GameManager>
     
     public bool useTimer;
 
+    public int heightObjective;
+
 
     private void Awake()
     {
@@ -68,6 +70,10 @@ public class GameManager : Singleton<GameManager>
     public void EndGame()
     {
         musicSource.Stop();
+
+        SoundManager.Instance.PlaySound("SFX_Finish", false);
+
+        StopCoroutine(timer.clockSpendTime);
 
         //Get order
         var players = playersManager.players;
