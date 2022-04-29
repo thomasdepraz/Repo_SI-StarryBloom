@@ -31,7 +31,7 @@ public class ItemSpawn : MonoBehaviour
 
     private IEnumerator SpawnTimer()
     {
-        yield return new WaitForSeconds(Random.Range(2f, 8f));
+        yield return new WaitForSeconds(Random.Range(1f, 5f));
         Spawn();
     }
 
