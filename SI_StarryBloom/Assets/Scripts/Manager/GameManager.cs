@@ -27,7 +27,8 @@ public class GameManager : Singleton<GameManager>
         //Get PlayersManager
         playersManager = PlayersManager.Instance;
 
-        //StartGame();
+        if(playersManager.players.Count>0)
+            StartGame();
 
     }
 
